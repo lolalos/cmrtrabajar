@@ -1,24 +1,29 @@
-import React, { useState } from "react"; // Import useState
+import React, { useState, useEffect } from "react"; // Import useState and useEffect
 import { useParams } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import { makeStyles, useTheme } from "@material-ui/core/styles"; // Importando useTheme
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 
 import TicketsManager from "../../components/TicketsManagerTabs/";
 import Ticket from "../../components/Ticket/";
 import { i18n } from "../../translate/i18n";
 
+// ---
+// IMPORT YOUR LOGOS HERE
+// Make sure these paths match the actual location of your logos in src/assets/
+import logoLightMode from "../../assets/logo_login.png"; // Logo for light mode
+import logoDarkMode from "../../assets/logo_login.png";   // Logo for dark mode
+// ---
+
 const useStyles = makeStyles((theme) => ({
     chatContainer: {
         flex: 1,
-        // backgroundColor: "#eee",
-        padding: theme.spacing(0), //Aqui ele ajusta espaço na tela de ticket
+        padding: theme.spacing(0),
         height: `calc(100% - 48px)`,
         overflowY: "hidden",
     },
 
     chatPapper: {
-        // backgroundColor: "red",
         display: "flex",
         height: "100%",
     },
@@ -41,20 +46,30 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         height: "100%",
         textAlign: "center",
+        flexDirection: "column", // Ensure image and text stack vertically
     },
 }));
 
 const TicketsCustom = () => {
-    // Initialize useTheme and useState inside the component
-    const theme = useTheme();
-    const [logoImg, setLogoImg] = useState(
-        theme.palette.type === "light"
-            ? `${process.env.REACT_APP_BACKEND_URL}/public/logotipos/interno.png`
-            : `${process.env.REACT_APP_BACKEND_URL}/public/logotipos/logo_w.png`
-    );
-
     const classes = useStyles();
     const { ticketId } = useParams();
+    const theme = useTheme();
+
+    // ---
+    // USE THE IMPORTED LOGOS DIRECTLY
+    const logoLight = logoLightMode;
+    const logoDark = logoDarkMode;
+
+    // Set initial logo based on current theme
+    const [logoImg, setLogoImg] = useState(
+        theme.palette.type === "light" ? logoLight : logoDark
+    );
+
+    // Update logo when theme changes
+    useEffect(() => {
+        setLogoImg(theme.palette.type === "light" ? logoLight : logoDark);
+    }, [theme.palette.type, logoLight, logoDark]); // Added logoLight and logoDark to dependencies
+    // ---
 
     return (
         <div className={classes.chatContainer}>
@@ -74,7 +89,7 @@ const TicketsCustom = () => {
                                     <center>
                                         <img
                                             style={{ margin: "0 auto", width: "80%" }}
-                                            src={`${logoImg}?r=${Math.random()}`}
+                                            src={`${logoImg}?r=${Math.random()}`} // Kept random for cache busting
                                             alt={`${process.env.REACT_APP_NAME_SYSTEM}`}
                                         />
                                     </center>

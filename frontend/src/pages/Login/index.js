@@ -13,6 +13,10 @@ import api from "../../services/api";
 import { i18n } from "../../translate/i18n";
 import { AuthContext } from "../../context/Auth/AuthContext";
 
+// *** IMPORTA TU LOGO AQUÍ ***
+// Asegúrate de que esta ruta coincida con la ubicación real de tu logo en src/assets/
+import loginLogo from "../../assets/logo_login.png"; // Cambia 'login.png' si tu archivo tiene otro nombre
+
 const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
@@ -113,16 +117,17 @@ const Login = () => {
         handleLogin(user);
     };
 
-    const logo = `${process.env.REACT_APP_BACKEND_URL}/public/logotipos/login.png`;
-    const randomValue = Math.random();
-    const logoWithRandom = `${logo}?r=${randomValue}`;
+    // *** USANDO EL LOGO IMPORTADO DIRECTAMENTE ***
+    // Ya no necesitas construir la URL ni agregar el valor aleatorio para el caché,
+    // Webpack se encarga de eso cuando importas la imagen.
+    const logo = loginLogo;
 
     return (
         <div className={classes.root}>
             <div className={classes.leftSide}>
                 <img
                     style={{ margin: "0 auto", width: "80%" }}
-                    src={logoWithRandom}
+                    src={logo} // Usamos la variable 'logo' que ahora contiene la URL generada por Webpack
                     alt={`${process.env.REACT_APP_NAME_SYSTEM}`}
                 />
             </div>

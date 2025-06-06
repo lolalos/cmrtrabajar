@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { makeStyles, useTheme } from "@material-ui/core/styles"; // Importando useTheme
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
@@ -14,6 +14,13 @@ import TicketAdvancedLayout from "../../components/TicketAdvancedLayout";
 import { TicketsContext } from "../../context/Tickets/TicketsContext";
 
 import { i18n } from "../../translate/i18n";
+
+// ---
+// IMPORT YOUR LOGOS HERE
+// Make sure these paths match the actual location of your logos in src/assets/
+import logoLightMode from "../../assets/logo_login.png"; // Logo for light mode
+import logoDarkMode from "../../assets/logo_login.png";   // Logo for dark mode
+// ---
 
 const useStyles = makeStyles((theme) => ({
     header: {},
@@ -33,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
 const TicketAdvanced = (props) => {
     const classes = useStyles();
-    const theme = useTheme(); // Usando o hook useTheme
+    const theme = useTheme();
     const { ticketId } = useParams();
     const [option, setOption] = useState(0);
     const { currentTicket, setCurrentTicket } = useContext(TicketsContext);
@@ -57,13 +64,19 @@ const TicketAdvanced = (props) => {
         }
     }, [currentTicket]);
 
-    // Definindo os logos para modo claro e escuro
-    const logoLight = `${process.env.REACT_APP_BACKEND_URL}/public/logotipos/interno.png`;
-    const logoDark = `${process.env.REACT_APP_BACKEND_URL}/public/logotipos/logo_w.png`;
+    // ---
+    // USE THE IMPORTED LOGOS DIRECTLY
+    const logoLight = logoLightMode;
+    const logoDark = logoDarkMode;
 
-    // Definindo o logo inicial com base no modo de tema atual
-    const initialLogo = theme.palette.type === "light" ? logoLight : logoDark;
-    const [logoImg, setLogoImg] = useState(initialLogo);
+    // Set initial logo based on current theme
+    const [logoImg, setLogoImg] = useState(theme.palette.type === "light" ? logoLight : logoDark);
+
+    // Update logo when theme changes
+    useEffect(() => {
+        setLogoImg(theme.palette.type === "light" ? logoLight : logoDark);
+    }, [theme.palette.type, logoLight, logoDark]); // Added logoLight and logoDark to dependencies
+    // ---
 
     const renderPlaceholder = () => {
         return (
@@ -73,7 +86,7 @@ const TicketAdvanced = (props) => {
                     <center>
                         <img
                             style={{ margin: "0 auto", width: "80%" }}
-                            src={`${logoImg}?r=${Math.random()}`}
+                            src={`${logoImg}?r=${Math.random()}`} // Kept random for cache busting
                             alt={`${process.env.REACT_APP_NAME_SYSTEM}`}
                         />
                     </center>

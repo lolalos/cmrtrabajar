@@ -7,7 +7,6 @@ import { Link as RouterLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Formik, Form, Field } from "formik";
 import usePlans from "../../hooks/usePlans";
-import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
@@ -17,7 +16,6 @@ import Box from "@material-ui/core/Box";
 import InputMask from "react-input-mask";
 import api from "../../services/api";
 import { FormControl, InputLabel, MenuItem, Select } from "@material-ui/core";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles"; // Added useTheme
 import Container from "@material-ui/core/Container";
@@ -26,6 +24,11 @@ import { i18n } from "../../translate/i18n";
 import { openApi } from "../../services/api";
 import toastError from "../../errors/toastError";
 import moment from "moment";
+
+// *** IMPORT YOUR LOGOS HERE ***
+// Make sure these paths match the actual location of your logos in src/assets/
+import logoLightMode from "../../assets/logo.png"; // Logo for light mode
+import logoDarkMode from "../../assets/logo.png";   // Logo for dark mode
 
 const Copyright = () => {
     return (
@@ -73,12 +76,20 @@ const SignUp = () => {
     const [allowregister, setallowregister] = useState("enabled");
     const [trial, settrial] = useState("3");
 
-    const logoLight = `${process.env.REACT_APP_BACKEND_URL}/public/logotipos/interno.png`;
-    const logoDark = `${process.env.REACT_APP_BACKEND_URL}/public/logotipos/logo_w.png`;
+    // *** USE THE IMPORTED LOGOS DIRECTLY ***
+    // These variables now hold the processed URLs from Webpack
+    const logoLight = logoLightMode;
+    const logoDark = logoDarkMode;
 
     // Use theme.palette.type to set the initial logo based on light or dark mode
-    const initialLogo = theme.palette.type === "light" ? logoLight : logoDark;
-    const [logoImg, setLogoImg] = useState(initialLogo);
+    const [logoImg, setLogoImg] = useState(
+        theme.palette.type === "light" ? logoLight : logoDark
+    );
+
+    // Update logoImg when the theme mode changes
+    useEffect(() => {
+        setLogoImg(theme.palette.type === "light" ? logoLight : logoDark);
+    }, [theme.palette.type, logoLight, logoDark]); // Added logoLight and logoDark to dependencies
 
     let companyId = null;
 
@@ -153,7 +164,7 @@ const SignUp = () => {
             <div className={classes.paper}>
                 <div>
                     <img
-                        src={`${logoImg}?r=${Math.random()}`}
+                        src={`${logoImg}?r=${Math.random()}`} // Retain the random value for cache busting, though Webpack helps with this.
                         style={{ margin: "0 auto", width: "50%" }}
                         alt={`${process.env.REACT_APP_NAME_SYSTEM}`}
                     />
