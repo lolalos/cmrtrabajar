@@ -34,8 +34,8 @@ import AnnouncementsPopover from "../components/AnnouncementsPopover";
 
 // *** IMPORTA TUS LOGOS AQUÍ ***
 // Asegúrate de que estos nombres de archivo y rutas coincidan con la ubicación real en src/assets/
-import logoInterno from "../assets/logo.png"; // Logo para el modo claro (o el que uses por defecto)
-import logoWhite from "../assets/logo.png";       // Logo para el modo oscuro
+import logoInterno from "../assets/logo_login.png"; // Logo para el modo claro (o el que uses por defecto)
+import logoWhite from "../assets/logo_login.png";       // Logo para el modo oscuro
 
 import { SocketContext } from "../context/Socket/SocketContext";
 import ChatPopover from "../pages/Chat/ChatPopover";

@@ -135,7 +135,7 @@ const messages = {
           default: "Predeterminado",
           sendIdQueue: "Cola",
           timeSendQueue: "Redireccionar a la cola en X minutos",
-          queueRedirection: "Redireccionamiento de Cola",
+          queueRedirection: "Redireccionamiento de Áreas",
           outOfHoursMessage: "Mensaje fuera del horario de atención",
           queueRedirectionDesc: "Selecciona una cola para que los contactos sin cola sean redireccionados",
           prompt: "Instrucción", // 'Prompt' en este contexto se refiere a una instrucción para un bot o IA
@@ -402,7 +402,7 @@ const messages = {
         },
       },
       ticketsQueueSelect: {
-        placeholder: "Colas",
+        placeholder: "Redireccionamiento de Áreas",
       },
       tickets: {
         inbox: {
@@ -483,7 +483,7 @@ const messages = {
           tickets: "Atenciones",
           quickMessages: "Respuestas Rápidas",
           contacts: "Contactos",
-          queues: "Colas & Chatbot",
+          queues: "Áreas & Chatbot",
           tags: "Etiquetas",
           administration: "Administración",
           users: "Usuarios",
@@ -527,7 +527,7 @@ const messages = {
         confirmationModal: {
           deleteTitle: "Eliminar",
           deleteMessage:
-            "¿Estás seguro? ¡Esta acción no se puede revertir! Y será eliminada de las colas y conexiones vinculadas.",
+            "¿Estás seguro? ¡Esta acción no se puede revertir! Y será eliminada de las Áreas y conexiones vinculadas.",
         },
       },
       reports: {
@@ -816,7 +816,7 @@ const messages = {
         title: "Configuraciones de Campañas",
       },
       queues: {
-        title: "Colas & Chatbot",
+        title: "Áreas & Chatbot",
         table: {
           id: "ID",
           name: "Nombre",
@@ -835,7 +835,7 @@ const messages = {
         },
       },
       queueSelect: {
-        inputLabel: "Colas",
+        inputLabel: "Áreas",
       },
       users: {
         title: "Usuarios",

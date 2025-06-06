@@ -235,12 +235,12 @@ const TicketsDurationDetailReports = () => {
         <div className={classes.toolbarIcon}>
           <IconButton onClick={handleBack}>
             <ChevronLeft />
-            <span style={{ fontSize: '1rem' }}>Voltar</span>
+            <span style={{ fontSize: '1rem' }}>Volver</span>
           </IconButton>
         </div>
       </Box>
       <MainHeader>
-        <Title>Relatório de Duração do Atendimento - { contact ? contact.name || '' : '' } </Title>
+        <Title>Reporte de Duración de la Atención - { contact ? contact.name || '' : '' } </Title>
 
         <MainHeaderButtonsWrapper>
           <TextField
@@ -261,7 +261,7 @@ const TicketsDurationDetailReports = () => {
             variant="contained"
           >
             {pdfLoading ? (
-              <div style={{ width: 100 }}>Carregando...</div>
+              <div style={{ width: 100 }}>Cargando...</div>
             ) : (
               <>
                 <div style={{ marginLeft: 6 }}>{i18n.t('Exportar')}</div>
@@ -283,11 +283,11 @@ const TicketsDurationDetailReports = () => {
           >
             <TableHead>
               <TableRow>
-                <TableCell align="center"> Início do atendimento </TableCell>
-                <TableCell align="center"> Última atualização </TableCell>
-                <TableCell align="center"> Status </TableCell>
-                <TableCell align="center"> Último atendente </TableCell>
-                <TableCell align="center"> Duração após finalizado </TableCell>
+                <TableCell align="center"> Inicio de la atención </TableCell>
+                <TableCell align="center"> Última actualización </TableCell>
+                <TableCell align="center"> Estado </TableCell>
+                <TableCell align="center"> Último agente </TableCell>
+                <TableCell align="center"> Duración después de finalizado </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

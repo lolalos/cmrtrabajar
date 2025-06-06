@@ -345,10 +345,10 @@ const ChartsAppointmentsAtendent = () => {
       <Paper className={classes.fixedHeightPaper2}>
         <Grid item xs={6} className={classes.fixedGridPaper3}>
           <Typography component="h2" variant="h6" color="primary" gutterBottom>
-            Atendimentos por Atendentes
+            Atenciones por Atendentes
           </Typography>
           <span style={{ fontSize: 13, color: "#bcbcbc" }}>
-            Saiba quais são os atendentes mais produtivos
+            Descubre cuáles son los atendentes más productivos
           </span>
           <Stack
             direction={"row"}
@@ -381,7 +381,7 @@ const ChartsAppointmentsAtendent = () => {
                 onChange={(newValue) => {
                   setFinalDate(newValue);
                 }}
-                label="Fim"
+                label="Fin"
                 renderInput={(params) => (
                   <TextField fullWidth {...params} sx={{ width: "20ch" }} />
                 )}
@@ -405,11 +405,11 @@ const ChartsAppointmentsAtendent = () => {
 
         <Grid item xs={6} className={classes.fixedGridPaper3}>
           <Typography component="h2" variant="h6" color="primary" gutterBottom>
-            Atendimentos por Departamentos/Filas
+            Atenciones por Departamentos/Áreas
           </Typography>
 
           <span style={{ fontSize: 13, color: "#bcbcbc" }}>
-            Saiba quais são os departamentos mais procurados
+            Descubre cuáles son los departamentos más solicitados
           </span>
           <Stack
             direction={"row"}

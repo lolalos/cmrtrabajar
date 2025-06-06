@@ -330,10 +330,10 @@ const ChartsDepartamentRatings = () => {
     <Grid item xs={12} style={{ marginTop: 8, marginBottom: 8 }}>
       <Paper className={classes.fixedHeightPaper2}>
         <Typography component="h2" variant="h6" color="primary" gutterBottom>
-          Avaliações por Departamento/Fila
+          Calificaciones por Departamento/Área
         </Typography>
         <span style={{ fontSize: 13, color: "#bcbcbc" }}>
-          Quantidade de mensagens recebidas e enviados em cada hora do dia.
+          Cantidad de mensajes recibidos y enviados en cada hora del día.
         </span>
         <Stack
           direction={"row"}
@@ -366,7 +366,7 @@ const ChartsDepartamentRatings = () => {
               onChange={(newValue) => {
                 setFinalDate(newValue);
               }}
-              label="Fim"
+              label="Fin"
               renderInput={(params) => (
                 <TextField fullWidth {...params} sx={{ width: "20ch" }} />
               )}

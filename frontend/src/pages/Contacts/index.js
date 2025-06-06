@@ -434,7 +434,7 @@ function getDateLastMessage(contact) {
 									</MenuItem>
                                     <MenuItem>
                         
-									<CSVLink style={{ textDecoration:'none' }} separator=";" filename={'whaticket.csv'} 
+									<CSVLink style={{ textDecoration:'none' }} separator=";" filename={'contactos.csv'} 
 									data={contacts.map((contact) => ({ name: contact.name, number: contact.number, email: contact.email }))}>
                                         
                                         <CloudDownload fontSize="small"

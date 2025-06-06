@@ -83,7 +83,7 @@ const ExportReport = ({ tickets, name }) => {
         </View>
 
         <View style={classes.titleContainer}>
-          <Text style={classes.title}>Relação de Atendimentos Realizados - {name} </Text>
+          <Text style={classes.title}>Relación de Atenciones Realizadas - {name} </Text>
         </View>
 
         <View style={{
@@ -95,14 +95,14 @@ const ExportReport = ({ tickets, name }) => {
           alignItems: 'center',
           padding: 5,
         }}>
-          <Text style={{ width: '20%', ...classes.headerText }}>Início do atendimento</Text>
-          <Text style={{ width: '20%', ...classes.headerText }}>Última atualização</Text>
-          <Text style={{ width: '15%', ...classes.headerText }}>Status</Text>
+          <Text style={{ width: '20%', ...classes.headerText }}>Inicio de la atención</Text>
+          <Text style={{ width: '20%', ...classes.headerText }}>Última actualización</Text>
+          <Text style={{ width: '15%', ...classes.headerText }}>Estado</Text>
           <Text style={{ width: '25%', ...classes.headerText }}>
-            Último atendente
+            Último agente
           </Text>
           <Text style={{ width: '20%', ...classes.headerText }}>
-            Duração após finalizado
+            Duración después de finalizado
           </Text>
         </View>
 

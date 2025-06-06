@@ -142,7 +142,7 @@ const ForwardMessageModal = ({ messages, onClose, modalOpen }) => {
 			></ContactModal>
 			<Dialog open={modalOpen} onClose={handleClose}>
 				<DialogTitle id="form-dialog-title">
-					Encaminhar mensagem
+					Reenviar mensaje
 				</DialogTitle>
 				<DialogContent dividers>
 					<Autocomplete
@@ -218,7 +218,7 @@ const ForwardMessageModal = ({ messages, onClose, modalOpen }) => {
 						color="primary"
 						loading={loading}
 					>
-						Encaminhar
+						Reenviar
 					</ButtonWithSpinner>
 				</DialogActions>
 			</Dialog>

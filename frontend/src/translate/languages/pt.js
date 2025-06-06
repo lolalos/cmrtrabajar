@@ -402,7 +402,7 @@ const messages = {
         },
       },
       ticketsQueueSelect: {
-        placeholder: "Colas",
+        placeholder: "Áreas",
       },
       tickets: {
         inbox: {
@@ -483,7 +483,7 @@ const messages = {
           tickets: "Atenciones",
           quickMessages: "Respuestas Rápidas",
           contacts: "Contactos",
-          queues: "Colas & Chatbot",
+          queues: "Áreas & Chatbot",
           tags: "Etiquetas",
           administration: "Administración",
           users: "Usuarios",

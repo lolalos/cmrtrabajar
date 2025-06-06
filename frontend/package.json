@@ -76,15 +76,16 @@
         "use-sound": "^2.0.1",
         "uuid": "^8.3.2",
         "vcard-parser": "^1.0.0",
+        "vcards-js": "^2.10.0",
         "xlsx": "^0.18.5",
         "yup": "^0.32.8"
     },
     "scripts": {
-            "start": "set NODE_OPTIONS=--max-old-space-size=8192 && react-scripts start",
-            "build": "set NODE_OPTIONS=--max-old-space-size=8192 && set NODE_OPTIONS=--openssl-legacy-provider && set GENERATE_SOURCEMAP=false && react-scripts build",
-            "builddev": "set NODE_OPTIONS=--max-old-space-size=8192 && react-scripts build",
-            "test": "set NODE_OPTIONS=--max-old-space-size=8192 && react-scripts test",
-            "eject": "set NODE_OPTIONS=--max-old-space-size=8192 && react-scripts eject"
+        "start": "set NODE_OPTIONS=--max-old-space-size=8192 && react-scripts start",
+        "build": "set NODE_OPTIONS=--max-old-space-size=8192 && set NODE_OPTIONS=--openssl-legacy-provider && set GENERATE_SOURCEMAP=false && react-scripts build",
+        "builddev": "set NODE_OPTIONS=--max-old-space-size=8192 && react-scripts build",
+        "test": "set NODE_OPTIONS=--max-old-space-size=8192 && react-scripts test",
+        "eject": "set NODE_OPTIONS=--max-old-space-size=8192 && react-scripts eject"
     },
     "eslintConfig": {
         "extends": "react-app"

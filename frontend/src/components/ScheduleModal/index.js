@@ -219,12 +219,12 @@ const ScheduleModal = ({ open, onClose, scheduleId, contactId, cleanContact, rel
 	return (
 		<div className={classes.root}>
 			<ConfirmationModal
-				title={i18n.t("scheduleModal.confirmationModal.deleteTitle")}
+				title={i18n.t("Eliminar el Archivo Adjunto")}
 				open={confirmationOpen}
 				onClose={() => setConfirmationOpen(false)}
 				onConfirm={deleteMedia}
 			>
-				{i18n.t("scheduleModal.confirmationModal.deleteMessage")}
+				{i18n.t("Realmente desea eliminar el archivo adjunto?")}
 			</ConfirmationModal>
 			<Dialog
 				open={open}
@@ -234,7 +234,7 @@ const ScheduleModal = ({ open, onClose, scheduleId, contactId, cleanContact, rel
 				scroll="paper"
 			>
 				<DialogTitle id="form-dialog-title">
-					{schedule.status === 'ERRO' ? 'Erro de Envio' : `Mensagem ${capitalize(schedule.status)}`}
+					{schedule.status === 'ERRO' ? 'Erro de Envio' : `Mensaje ${capitalize(schedule.status)}`}
 				</DialogTitle>
 				<div style={{ display: "none" }}>
 					<input

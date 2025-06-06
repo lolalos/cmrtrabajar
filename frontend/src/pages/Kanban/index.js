@@ -110,7 +110,7 @@ const Kanban = () => {
       if(targetLaneId !== "0") {
         await api.put(`/ticket-tags/${cardId}/${targetLaneId}`);
       }
-      toast.success('Ticket movido com sucesso');
+      toast.success('Ticket movido con éxito');
       
       fetchTickets();
       fetchTags();

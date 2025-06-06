@@ -27,8 +27,8 @@ import moment from "moment";
 
 // *** IMPORT YOUR LOGOS HERE ***
 // Make sure these paths match the actual location of your logos in src/assets/
-import logoLightMode from "../../assets/logo.png"; // Logo for light mode
-import logoDarkMode from "../../assets/logo.png";   // Logo for dark mode
+import logoLightMode from "../../assets/logo_login.png"; // Logo for light mode
+import logoDarkMode from "../../assets/logo_login.png";   // Logo for dark mode
 
 const Copyright = () => {
     return (

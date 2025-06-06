@@ -96,7 +96,7 @@ const MessagesAPI = () => {
           'Authorization': `Bearer ${values.token}`
         }
       })
-      toast.success('Mensagem enviada com sucesso');
+      toast.success('Mensaje enviado con éxito');
     } catch (err) {
       toastError(err);
     }

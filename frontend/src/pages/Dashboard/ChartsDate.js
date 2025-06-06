@@ -39,7 +39,7 @@ export const options = {
         },
         title: {
             display: true,
-            text: 'Gráfico de Conversas',
+            text: 'Gráfico de Conversaciones',
             position: 'left',
         },
         datalabels: {
@@ -131,7 +131,7 @@ export const ChartsDate = () => {
                     <DatePicker
                         value={finalDate}
                         onChange={(newValue) => { setFinalDate(newValue) }}
-                        label="Fim"
+                        label="Fin"
                         renderInput={(params) => <TextField fullWidth {...params} sx={{ width: '20ch' }} />}
                     />
                 </LocalizationProvider>

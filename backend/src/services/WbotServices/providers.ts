@@ -106,8 +106,8 @@ export const provider = async (ticket: Ticket, msg: proto.IWebMessageInfo, compa
                   method: 'GET',
                   url: `${urlmkauth}/api/cliente/show/${numberCPFCNPJ}`,
                   headers: {
-                      Authorization: `Bearer ${jwt}`
-        }
+                    Authorization: `Bearer ${jtw}`
+                  }
                 };
                 axios.request(config as any)
                   .then(async function (response) {

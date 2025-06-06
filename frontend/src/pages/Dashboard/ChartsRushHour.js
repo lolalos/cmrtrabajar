@@ -285,7 +285,7 @@ const ChartsRushHour = () => {
         : 0,
     datasets: [
       {
-        label: "Quantidade",
+        label: "Cantidad de mensajes",
         data:
           chartData.length > 0
             ? chartData.map((item) => item.message_count)
@@ -303,7 +303,7 @@ const ChartsRushHour = () => {
       x: {
         title: {
           display: true,
-          text: "Hora do Dia",
+          text: "Hora del Dia",
         },
       },
       y: {
@@ -335,10 +335,10 @@ const ChartsRushHour = () => {
     <Grid item xs={12} style={{ marginTop: 8, marginBottom: 8 }}>
       <Paper className={classes.fixedHeightPaper2}>
         <Typography component="h2" variant="h6" color="primary" gutterBottom>
-          Horário de Pico - Troca de mensagens
+          Horario Pico - Intercambio de mensajes
         </Typography>
         <span style={{ fontSize: 13, color: "#bcbcbc" }}>
-          Quantidade de mensagens recebidas e enviados em cada hora do dia.
+          Cantidad de mensajes recibidos y enviados en cada hora del día.
         </span>
         <Stack
           direction={"row"}
@@ -371,7 +371,7 @@ const ChartsRushHour = () => {
               onChange={(newValue) => {
                 setFinalDate(newValue);
               }}
-              label="Fim"
+              label="Fin"
               renderInput={(params) => (
                 <TextField fullWidth {...params} sx={{ width: "20ch" }} />
               )}
