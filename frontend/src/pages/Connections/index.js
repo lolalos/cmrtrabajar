@@ -343,7 +343,7 @@ const Connections = () => {
             					color="primary"
             					onClick={restartWhatsapps}
           					>
-            					{i18n.t("REINICIAR CONEXÕES")}
+            					{i18n.t("REINICIAR CONEXIONES")}
           					</Button>
 							</>
 						)}
@@ -401,7 +401,7 @@ const Connections = () => {
 											<TableCell align="center">
 											  {whatsApp.number ? (
 												<>
-												  {console.log("Número do WhatsApp:", whatsApp.number)}
+												  {console.log("Número de WhatsApp:", whatsApp.number)}
 												  {console.log("Número formatado:", formatSerializedId(whatsApp.number))}
 												  {formatSerializedId(whatsApp.number)}
 												</>

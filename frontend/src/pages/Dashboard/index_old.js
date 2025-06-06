@@ -191,28 +191,28 @@ const Dashboard = () => {
       return (
         <>
           <Grid item xs={12} sm={6} md={4}>
-            <TextField
-              label="Data Inicial"
-              type="date"
-              value={dateFrom}
-              onChange={(e) => setDateFrom(e.target.value)}
-              className={classes.fullWidth}
-              InputLabelProps={{
-                shrink: true,
-              }}
-            />
+        <TextField
+          label="Fecha Inicial"
+          type="date"
+          value={dateFrom}
+          onChange={(e) => setDateFrom(e.target.value)}
+          className={classes.fullWidth}
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <TextField
-              label="Data Final"
-              type="date"
-              value={dateTo}
-              onChange={(e) => setDateTo(e.target.value)}
-              className={classes.fullWidth}
-              InputLabelProps={{
-                shrink: true,
-              }}
-            />
+        <TextField
+          label="Fecha Final"
+          type="date"
+          value={dateTo}
+          onChange={(e) => setDateTo(e.target.value)}
+          className={classes.fullWidth}
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
           </Grid>
         </>
       );
@@ -220,22 +220,22 @@ const Dashboard = () => {
       return (
         <Grid item xs={12} sm={6} md={4}>
           <FormControl className={classes.selectContainer}>
-            <InputLabel id="period-selector-label">Período</InputLabel>
-            <Select
-              labelId="period-selector-label"
-              id="period-selector"
-              value={period}
-              onChange={(e) => handleChangePeriod(e.target.value)}
-            >
-              <MenuItem value={0}>Nenhum selecionado</MenuItem>
-              <MenuItem value={3}>Últimos 3 dias</MenuItem>
-              <MenuItem value={7}>Últimos 7 dias</MenuItem>
-              <MenuItem value={15}>Últimos 15 dias</MenuItem>
-              <MenuItem value={30}>Últimos 30 dias</MenuItem>
-              <MenuItem value={60}>Últimos 60 dias</MenuItem>
-              <MenuItem value={90}>Últimos 90 dias</MenuItem>
-            </Select>
-            <FormHelperText>Selecione o período desejado</FormHelperText>
+        <InputLabel id="period-selector-label">Período</InputLabel>
+        <Select
+          labelId="period-selector-label"
+          id="period-selector"
+          value={period}
+          onChange={(e) => handleChangePeriod(e.target.value)}
+        >
+          <MenuItem value={0}>Ninguno seleccionado</MenuItem>
+          <MenuItem value={3}>Últimos 3 días</MenuItem>
+          <MenuItem value={7}>Últimos 7 días</MenuItem>
+          <MenuItem value={15}>Últimos 15 días</MenuItem>
+          <MenuItem value={30}>Últimos 30 días</MenuItem>
+          <MenuItem value={60}>Últimos 60 días</MenuItem>
+          <MenuItem value={90}>Últimos 90 días</MenuItem>
+        </Select>
+        <FormHelperText>Seleccione el período deseado</FormHelperText>
           </FormControl>
         </Grid>
       );
@@ -249,7 +249,7 @@ const Dashboard = () => {
           <Grid item xs={12} sm={6} md={3}>
             <CardCounter
               icon={<TodayIcon fontSize="inherit" />}
-              title="Data Vencimento"
+              title="Fecha de Vencimiento"
               value={companyDueDate}
               loading={loading}
             />
@@ -267,10 +267,10 @@ const Dashboard = () => {
                 value={filterType}
                 onChange={(e) => handleChangeFilterType(e.target.value)}
               >
-                <MenuItem value={1}>Filtro por Data</MenuItem>
+                <MenuItem value={1}>Filtro por Fecha</MenuItem>
                 <MenuItem value={2}>Filtro por Período</MenuItem>
               </Select>
-              <FormHelperText>Selecione o período desejado</FormHelperText>
+              <FormHelperText>Seleccione el período deseado</FormHelperText>
             </FormControl>
           </Grid>
 
@@ -289,7 +289,7 @@ const Dashboard = () => {
           <Grid item xs={12} sm={6} md={4}>
             <CardCounter
               icon={<GroupIcon fontSize="inherit" />}
-              title="Atd. Pendentes"
+              title="Atenciones Pendientes"
               value={counters.supportPending}
               loading={loading}
             />
@@ -297,7 +297,7 @@ const Dashboard = () => {
           <Grid item xs={12} sm={6} md={4}>
             <CardCounter
               icon={<GroupIcon fontSize="inherit" />}
-              title="Atd. Acontecendo"
+              title="Atenciones en Curso"
               value={counters.supportHappening}
               loading={loading}
             />
@@ -305,7 +305,7 @@ const Dashboard = () => {
           <Grid item xs={12} sm={6} md={4}>
             <CardCounter
               icon={<AssignmentIcon fontSize="inherit" />}
-              title="Atd. Realizados"
+              title="Atenciones Realizadas"
               value={counters.supportFinished}
               loading={loading}
             />
@@ -321,7 +321,7 @@ const Dashboard = () => {
           <Grid item xs={12} sm={6} md={4}>
             <CardCounter
               icon={<SpeedIcon fontSize="inherit" />}
-              title="T.M. de Atendimento"
+              title="T.M. de Atención"
               value={formatTime(counters.avgSupportTime)}
               loading={loading}
             />

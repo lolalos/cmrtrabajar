@@ -66,8 +66,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const AnnouncementSchema = Yup.object().shape({
-  title: Yup.string().required("Obrigatório"),
-  text: Yup.string().required("Obrigatório"),
+  title: Yup.string().required("Título es obligatorio"),
+  text: Yup.string().required("Texto es obligatorio"),
 });
 
 const AnnouncementModal = ({ open, onClose, announcementId, reload }) => {
@@ -250,8 +250,8 @@ const AnnouncementModal = ({ open, onClose, announcementId, reload }) => {
                         name="status"
                         error={touched.status && Boolean(errors.status)}
                       >
-                        <MenuItem value={true}>Ativo</MenuItem>
-                        <MenuItem value={false}>Inativo</MenuItem>
+                        <MenuItem value={true}>Activo</MenuItem>
+                        <MenuItem value={false}>Inactivo</MenuItem>
                       </Field>
                     </FormControl>
                   </Grid>

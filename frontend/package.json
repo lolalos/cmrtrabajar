@@ -2,7 +2,7 @@
     "name": "frontend",
     "version": "0.1.0",
     "versionSystem": "v5.5.0",
-    "nomeEmpresa": "Pack Typebot",
+    "nomeEmpresa": "XTRAVEL PERU",
     "private": true,
     "dependencies": {
         "@date-io/date-fns": "^2.14.0",
@@ -14,7 +14,7 @@
         "@material-ui/lab": "^4.0.0-alpha.56",
         "@material-ui/pickers": "^3.3.10",
         "@material-ui/styles": "^4.11.5",
-        "@mui/icons-material": "^5.14.1",
+        "@mui/icons-material": "^5.17.1",
         "@mui/material": "^5.10.13",
         "@mui/x-date-pickers": "^6.0.1",
         "@testing-library/jest-dom": "^5.11.4",
@@ -80,11 +80,11 @@
         "yup": "^0.32.8"
     },
     "scripts": {
-        "start": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && react-scripts start",
-        "build": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && NODE_OPTIONS=--openssl-legacy-provider GENERATE_SOURCEMAP=false react-scripts build",
-        "builddev": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && react-scripts build",
-        "test": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && react-scripts test",
-        "eject": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && react-scripts eject"
+            "start": "set NODE_OPTIONS=--max-old-space-size=8192 && react-scripts start",
+            "build": "set NODE_OPTIONS=--max-old-space-size=8192 && set NODE_OPTIONS=--openssl-legacy-provider && set GENERATE_SOURCEMAP=false && react-scripts build",
+            "builddev": "set NODE_OPTIONS=--max-old-space-size=8192 && react-scripts build",
+            "test": "set NODE_OPTIONS=--max-old-space-size=8192 && react-scripts test",
+            "eject": "set NODE_OPTIONS=--max-old-space-size=8192 && react-scripts eject"
     },
     "eslintConfig": {
         "extends": "react-app"

@@ -167,7 +167,7 @@ const Login = () => {
                                         variant="body2"
                                         className={classes.link}
                                     >
-                                        Esqueceu sua senha?
+                                        Olvidaste tu contraseña?
                                     </Link>
                                 </Grid>
                             </Grid>

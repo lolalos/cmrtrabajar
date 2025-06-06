@@ -344,7 +344,7 @@ function Chat(props) {
                 color="primary"
                 variant="contained"
               >
-                Nova
+                Nuevo Chat
               </Button>
             </div>
           

@@ -97,20 +97,20 @@ const ToDoList = () => {
       <div className={classes.inputContainer}>
         <TextField
           className={classes.input}
-          label="Nova tarefa"
+          label="Nueva tarea"
           value={task}
           onChange={handleTaskChange}
           variant="outlined"
         />
         <Button variant="contained" color="primary" onClick={handleAddTask}>
-          {editIndex >= 0 ? 'Salvar' : 'Adicionar'}
+          {editIndex >= 0 ? 'Guardar' : 'Agregar'}
         </Button>
       </div>
       <div className={classes.listContainer}>
         <List>
           {tasks.map((task, index) => (
             <ListItem key={index} className={classes.list}>
-              <ListItemText primary={task.text} secondary={task.updatedAt.toLocaleString()} />
+              <ListItemText primary={task.text} secondary={new Date(task.updatedAt).toLocaleString('es-ES')} />
               <ListItemSecondaryAction>
                 <IconButton onClick={() => handleEditTask(index)}>
                   <EditIcon />

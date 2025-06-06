@@ -296,7 +296,7 @@ const Dashboard = () => {
                 <>
                     <Grid item xs={12} sm={6} md={4}>
                         <TextField
-                            label="Data Inicial"
+                            label="Fecha Inicial"
                             type="date"
                             value={dateFrom}
                             onChange={(e) => setDateFrom(e.target.value)}
@@ -308,7 +308,7 @@ const Dashboard = () => {
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
                         <TextField
-                            label="Data Final"
+                            label="Fecha Final"
                             type="date"
                             value={dateTo}
                             onChange={(e) => setDateTo(e.target.value)}
@@ -331,15 +331,15 @@ const Dashboard = () => {
                             value={period}
                             onChange={(e) => handleChangePeriod(e.target.value)}
                         >
-                            <MenuItem value={0}>Nenhum selecionado</MenuItem>
-                            <MenuItem value={3}>Últimos 3 dias</MenuItem>
-                            <MenuItem value={7}>Últimos 7 dias</MenuItem>
-                            <MenuItem value={15}>Últimos 15 dias</MenuItem>
-                            <MenuItem value={30}>Últimos 30 dias</MenuItem>
-                            <MenuItem value={60}>Últimos 60 dias</MenuItem>
-                            <MenuItem value={90}>Últimos 90 dias</MenuItem>
+                            <MenuItem value={0}>Ninguno seleccionado</MenuItem>
+                            <MenuItem value={3}>Últimos 3 días</MenuItem>
+                            <MenuItem value={7}>Últimos 7 días</MenuItem>
+                            <MenuItem value={15}>Últimos 15 días</MenuItem>
+                            <MenuItem value={30}>Últimos 30 días</MenuItem>
+                            <MenuItem value={60}>Últimos 60 días</MenuItem>
+                            <MenuItem value={90}>Últimos 90 días</MenuItem>
                         </Select>
-                        <FormHelperText>Selecione o período desejado</FormHelperText>
+                        <FormHelperText>Seleccione el período deseado</FormHelperText>
                     </FormControl>
                 </Grid>
             );
@@ -357,7 +357,7 @@ const Dashboard = () => {
                                 <Grid container spacing={1} alignItems="center">
                                     <Grid item xs={8}>
                                         <Typography component="h3" variant="subtitle1" className={classes.cardTitle}>
-                                            Conexões Ativas
+                                            Conexiones Activas
                                         </Typography>
                                         <Typography component="h1" variant="h6" className={classes.cardSubtitle}>
                                             {counters.totalWhatsappSessions}
@@ -398,7 +398,7 @@ const Dashboard = () => {
                             <Grid container spacing={1} alignItems="center">
                                 <Grid item xs={8}>
                                     <Typography component="h3" variant="subtitle1" className={classes.cardTitle}>
-                                        Em Conversa
+                                        En Conversación
                                     </Typography>
                                     <Typography component="h1" variant="h6" className={classes.cardSubtitle}>
                                         {counters.supportHappening}
@@ -417,7 +417,7 @@ const Dashboard = () => {
                             <Grid container spacing={1} alignItems="center">
                                 <Grid item xs={8}>
                                     <Typography component="h3" variant="subtitle1" className={classes.cardTitle}>
-                                        Aguardando
+                                        Esperando Atender
                                     </Typography>
                                     <Typography component="h1" variant="h6" className={classes.cardSubtitle}>
                                         {counters.supportPending}
@@ -436,7 +436,7 @@ const Dashboard = () => {
                             <Grid container spacing={1} alignItems="center">
                                 <Grid item xs={8}>
                                     <Typography component="h3" variant="subtitle1" className={classes.cardTitle}>
-                                        Novos Contatos
+                                        Nuevos Contactos
                                     </Typography>
                                     <Typography component="h1" variant="h6" className={classes.cardSubtitle}>
                                         {GetContacts(true)}
@@ -455,7 +455,7 @@ const Dashboard = () => {
                             <Grid container spacing={1} alignItems="center">
                                 <Grid item xs={8}>
                                     <Typography component="h3" variant="subtitle1" className={classes.cardTitle}>
-                                        T.M. de Conversa
+                                        T.P. de Conversación
                                     </Typography>
                                     <Typography component="h1" variant="h6" className={classes.cardSubtitle}>
                                         {formatTime(counters.avgSupportTime)}
@@ -494,7 +494,7 @@ const Dashboard = () => {
                                 {/* Texto */}
                                 <Grid item xs={8}>
                                     <Typography component="h3" variant="subtitle1" className={classes.cardTitle}>
-                                        T.M. de Espera
+                                        T.P. de Espera
                                     </Typography>
                                     <Typography component="h1" variant="h6" className={classes.cardSubtitle}>
                                         {formatTime(counters.avgWaitTime)}
@@ -517,10 +517,10 @@ const Dashboard = () => {
                                 value={filterType}
                                 onChange={(e) => handleChangeFilterType(e.target.value)}
                             >
-                                <MenuItem value={1}>Filtro por Data</MenuItem>
-                                <MenuItem value={2}>Filtro por Período</MenuItem>
+                                <MenuItem value={1}>Filtro por fecha</MenuItem>
+                                <MenuItem value={2}>Filtro por período</MenuItem>
                             </Select>
-                            <FormHelperText>Selecione o período desejado</FormHelperText>
+                            <FormHelperText>Seleccione el período deseado</FormHelperText>
                         </FormControl>
                     </Grid>
 

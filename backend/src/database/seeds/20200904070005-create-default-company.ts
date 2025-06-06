@@ -23,7 +23,7 @@ module.exports = {
           "Companies",
           [
             {
-              name: "Pack Typebot",
+              name: "XTRAVEL PERU",
               planId: 1,
               dueDate: "2093-03-14 04:00:00+01",
               createdAt: new Date(),

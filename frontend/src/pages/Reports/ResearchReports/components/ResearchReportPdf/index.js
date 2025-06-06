@@ -125,7 +125,7 @@ const ResearchReportPdf = ({ researchs, user, dateIni, dateFin }) => {
         </View>
 
         <View style={classes.titleContainer}>
-          <Text style={classes.title}>Relatório de Pesquisas Realizadas</Text>
+          <Text style={classes.title}>Informe sobre las investigaciones realizadas</Text>
         </View>
         <View style={classes.userContainer}>
           {user && (

@@ -29,13 +29,13 @@ const VersionLog = () => {
     useEffect(() => {
         const fetchReadme = async () => {
             try {
-                const response = await axios.get("https://api.github.com/repos/packtypebot/logs/contents/README.md");
+                const response = await axios.get("https://raw.githubusercontent.com/TypebotIO/typebot/main/CHANGELOG.md");
                 const decodedContent = decodeBase64(response.data.content);
                 const parsedLog = parseVersionLog(decodedContent);
                 setVersionLog(parsedLog);
                 setLoading(false);
             } catch (error) {
-                setError("Erro ao carregar o log de versões.");
+                setError("Tendremos versiones pronto! Por favor, inténtelo de nuevo más tarde.");
                 setLoading(false);
             }
         };

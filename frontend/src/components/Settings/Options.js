@@ -271,7 +271,7 @@ export default function Options(props) {
             key: "userRating",
             value,
         });
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito.");
         setLoadingUserRating(false);
     }
 
@@ -282,7 +282,7 @@ export default function Options(props) {
             key: "allowregister",
             value,
         });
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito.");
         setLoadingallowregister(false);
     }
 
@@ -293,7 +293,7 @@ export default function Options(props) {
             key: "viewclosed",
             value,
         });
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito.");
         setLoadingviewclosed(false);
     }
 
@@ -304,7 +304,7 @@ export default function Options(props) {
             key: "viewgroups",
             value,
         });
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito.");
         setLoadingviewgroups(false);
     }
     async function handleSendGreetingMessageOneQueues(value) {
@@ -314,7 +314,7 @@ export default function Options(props) {
             key: "sendGreetingMessageOneQueues",
             value,
         });
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito.");
         setLoadingSendGreetingMessageOneQueues(false);
     }
 
@@ -325,7 +325,7 @@ export default function Options(props) {
             key: "viewregister",
             value,
         });
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito.");
         setLoadingviewregister(false);
     }
 
@@ -336,7 +336,7 @@ export default function Options(props) {
             key: "trial",
             value,
         });
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito.");
         setLoadingtrial(false);
     }
 
@@ -348,7 +348,7 @@ export default function Options(props) {
             value,
         });
         //toast.success("Oraçãpeo atualizada com sucesso.");
-        toast.success("Operação atualizada com sucesso.", {
+        toast.success("Operación actualizada con éxito.", {
             position: "top-right",
             autoClose: 2000,
             hideProgressBar: false,
@@ -370,7 +370,7 @@ export default function Options(props) {
             key: "call",
             value,
         });
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito.");
         setLoadingCallType(false);
     }
 
@@ -381,7 +381,7 @@ export default function Options(props) {
             key: "chatBotType",
             value,
         });
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito.");
         setLoadingChatbotType(false);
     }
 
@@ -392,7 +392,7 @@ export default function Options(props) {
             key: "CheckMsgIsGroup",
             value,
         });
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito.");
         setCheckMsgIsGroupType(false);
         /*     if (typeof scheduleTypeChanged === "function") {
           scheduleTypeChanged(value);
@@ -409,7 +409,7 @@ export default function Options(props) {
             key: "sendGreetingAccepted",
             value,
         });
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito.");
         setLoadingSendGreetingAccepted(false);
     }
 
@@ -425,7 +425,7 @@ export default function Options(props) {
             value,
         });
 
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito..");
         setLoadingSettingsTransfTicket(false);
     }
 
@@ -436,7 +436,7 @@ export default function Options(props) {
             key: "ipixc",
             value,
         });
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito..");
         setLoadingIpIxcType(false);
     }
 
@@ -447,7 +447,7 @@ export default function Options(props) {
             key: "tokenixc",
             value,
         });
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito..");
         setLoadingTokenIxcType(false);
     }
 
@@ -458,7 +458,7 @@ export default function Options(props) {
             key: "ipmkauth",
             value,
         });
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito..");
         setLoadingIpMkauthType(false);
     }
 
@@ -469,7 +469,7 @@ export default function Options(props) {
             key: "clientidmkauth",
             value,
         });
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito..");
         setLoadingClientIdMkauthType(false);
     }
 
@@ -480,7 +480,7 @@ export default function Options(props) {
             key: "clientsecretmkauth",
             value,
         });
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito..");
         setLoadingClientSecrectMkauthType(false);
     }
 
@@ -491,7 +491,7 @@ export default function Options(props) {
             key: "asaas",
             value,
         });
-        toast.success("Operação atualizada com sucesso.");
+        toast.success("Operación actualizada con éxito..");
         setLoadingAsaasType(false);
     }
     return (
@@ -499,7 +499,7 @@ export default function Options(props) {
             <Grid spacing={3} container>
                 <Grid xs={12} sm={12} md={12} item>
                     <FormControl className={classes.selectContainer}>
-                        <InputLabel id="ratings-label">Avaliações</InputLabel>
+                        <InputLabel id="ratings-label">Evaluaciones</InputLabel>
                         <Select
                             labelId="ratings-label"
                             value={userRating}
@@ -507,15 +507,15 @@ export default function Options(props) {
                                 handleChangeUserRating(e.target.value);
                             }}
                         >
-                            <MenuItem value={"disabled"}>Desabilitadas</MenuItem>
+                            <MenuItem value={"disabled"}>Deshabilitadas</MenuItem>
                             <MenuItem value={"enabled"}>Habilitadas</MenuItem>
                         </Select>
-                        <FormHelperText>{loadingUserRating && "Atualizando..."}</FormHelperText>
+                        <FormHelperText>{loadingUserRating && "Actualizando..."}</FormHelperText>
                     </FormControl>
                 </Grid>
                 <Grid xs={12} sm={12} md={12} item>
                     <FormControl className={classes.selectContainer}>
-                        <InputLabel id="schedule-type-label">Gerenciamento de Expediente</InputLabel>
+                        <InputLabel id="schedule-type-label">Gestión de Expedientes</InputLabel>
                         <Select
                             labelId="schedule-type-label"
                             value={scheduleType}
@@ -523,16 +523,16 @@ export default function Options(props) {
                                 handleScheduleType(e.target.value);
                             }}
                         >
-                            <MenuItem value={"disabled"}>Desabilitado</MenuItem>
-                            <MenuItem value={"queue"}>Fila</MenuItem>
+                            <MenuItem value={"disabled"}>Deshabilitado</MenuItem>
+                            <MenuItem value={"queue"}>Área</MenuItem>
                             <MenuItem value={"company"}>Empresa</MenuItem>
                         </Select>
-                        <FormHelperText>{loadingScheduleType && "Atualizando..."}</FormHelperText>
+                        <FormHelperText>{loadingScheduleType && "Actualizando..."}</FormHelperText>
                     </FormControl>
                 </Grid>
                 <Grid xs={12} sm={12} md={12} item>
                     <FormControl className={classes.selectContainer}>
-                        <InputLabel id="group-type-label">Ignorar Mensagens de Grupos</InputLabel>
+                        <InputLabel id="group-type-label">Ignorar Mensajes de Grupos</InputLabel>
                         <Select
                             labelId="group-type-label"
                             value={CheckMsgIsGroup}
@@ -540,15 +540,15 @@ export default function Options(props) {
                                 handleGroupType(e.target.value);
                             }}
                         >
-                            <MenuItem value={"disabled"}>Desativado</MenuItem>
-                            <MenuItem value={"enabled"}>Ativado</MenuItem>
+                            <MenuItem value={"disabled"}>Deshabilitado</MenuItem>
+                            <MenuItem value={"enabled"}>Habilitado</MenuItem>
                         </Select>
-                        <FormHelperText>{loadingScheduleType && "Atualizando..."}</FormHelperText>
+                        <FormHelperText>{loadingScheduleType && "Actualizando..."}</FormHelperText>
                     </FormControl>
                 </Grid>
                 <Grid xs={12} sm={12} md={12} item>
                     <FormControl className={classes.selectContainer}>
-                        <InputLabel id="call-type-label">Aceitar Chamada</InputLabel>
+                        <InputLabel id="call-type-label">Aceptar Llamada</InputLabel>
                         <Select
                             labelId="call-type-label"
                             value={callType}
@@ -556,10 +556,10 @@ export default function Options(props) {
                                 handleCallType(e.target.value);
                             }}
                         >
-                            <MenuItem value={"disabled"}>Não Aceitar</MenuItem>
-                            <MenuItem value={"enabled"}>Aceitar</MenuItem>
+                            <MenuItem value={"disabled"}>No Aceptar</MenuItem>
+                            <MenuItem value={"enabled"}>Aceptar</MenuItem>
                         </Select>
-                        <FormHelperText>{loadingCallType && "Atualizando..."}</FormHelperText>
+                        <FormHelperText>{loadingCallType && "Actualizando..."}</FormHelperText>
                     </FormControl>
                 </Grid>
                 <Grid xs={12} sm={12} md={12} item>
@@ -582,7 +582,7 @@ export default function Options(props) {
                 {/* ENVIAR SAUDAÇÃO AO ACEITAR O TICKET */}
                 <Grid xs={12} sm={12} md={12} item>
                     <FormControl className={classes.selectContainer}>
-                        <InputLabel id="sendGreetingAccepted-label">Enviar saudação ao aceitar o ticket</InputLabel>
+                        <InputLabel id="sendGreetingAccepted-label">Enviar saludo al aceptar el ticket</InputLabel>
                         <Select
                             labelId="sendGreetingAccepted-label"
                             value={SendGreetingAccepted}
@@ -590,7 +590,7 @@ export default function Options(props) {
                                 handleSendGreetingAccepted(e.target.value);
                             }}
                         >
-                            <MenuItem value={"disabled"}>Desabilitado</MenuItem>
+                            <MenuItem value={"disabled"}>Deshabilitado</MenuItem>
                             <MenuItem value={"enabled"}>Habilitado</MenuItem>
                         </Select>
                         <FormHelperText>{loadingSendGreetingAccepted && "Atualizando..."}</FormHelperText>
@@ -602,7 +602,7 @@ export default function Options(props) {
                 <Grid xs={12} sm={12} md={12} item>
                     <FormControl className={classes.selectContainer}>
                         <InputLabel id="sendMsgTransfTicket-label">
-                            Enviar mensagem de transferencia de Fila/agente
+                            Enviar mensaje de transferencia de Área/agente
                         </InputLabel>
                         <Select
                             labelId="sendMsgTransfTicket-label"
@@ -611,10 +611,10 @@ export default function Options(props) {
                                 handleSettingsTransfTicket(e.target.value);
                             }}
                         >
-                            <MenuItem value={"disabled"}>Desabilitado</MenuItem>
+                            <MenuItem value={"disabled"}>Deshabilitado</MenuItem>
                             <MenuItem value={"enabled"}>Habilitado</MenuItem>
                         </Select>
-                        <FormHelperText>{loadingSettingsTransfTicket && "Atualizando..."}</FormHelperText>
+                        <FormHelperText>{loadingSettingsTransfTicket && "Actualizando..."}</FormHelperText>
                     </FormControl>
                 </Grid>
 
@@ -622,7 +622,7 @@ export default function Options(props) {
                 <Grid xs={12} sm={12} md={12} item>
                     <FormControl className={classes.selectContainer}>
                         <InputLabel id="sendGreetingMessageOneQueues-label">
-                            Enviar saudação quando houver somente 1 fila
+                            Enviar saludo cuando solo hay 1 cola
                         </InputLabel>
                         <Select
                             labelId="sendGreetingMessageOneQueues-label"
@@ -631,15 +631,15 @@ export default function Options(props) {
                                 handleSendGreetingMessageOneQueues(e.target.value);
                             }}
                         >
-                            <MenuItem value={"disabled"}>Desabilitado</MenuItem>
+                            <MenuItem value={"disabled"}>Deshabilitado</MenuItem>
                             <MenuItem value={"enabled"}>Habilitado</MenuItem>
                         </Select>
-                        <FormHelperText>{loadingSendGreetingMessageOneQueues && "Atualizando..."}</FormHelperText>
+                        <FormHelperText>{loadingSendGreetingMessageOneQueues && "Actualizando..."}</FormHelperText>
                     </FormControl>
                 </Grid>
                 <Grid xs={12} sm={12} md={12} item>
                     <FormControl className={classes.selectContainer}>
-                        <InputLabel id="viewclosed-label">Operador Visualiza Tickets Fechados?</InputLabel>
+                        <InputLabel id="viewclosed-label">Agente Visualiza Tickets Cerrados?</InputLabel>
                         <Select
                             labelId="viewclosed-label"
                             value={viewclosed}
@@ -647,16 +647,16 @@ export default function Options(props) {
                                 handleviewclosed(e.target.value);
                             }}
                         >
-                            <MenuItem value={"disabled"}>Não</MenuItem>
-                            <MenuItem value={"enabled"}>Sim</MenuItem>
+                            <MenuItem value={"disabled"}>No</MenuItem>
+                            <MenuItem value={"enabled"}>Sí</MenuItem>
                         </Select>
-                        <FormHelperText>{loadingviewclosed && "Atualizando..."}</FormHelperText>
+                        <FormHelperText>{loadingviewclosed && "Actualizando..."}</FormHelperText>
                     </FormControl>
                 </Grid>
 
                 <Grid xs={12} sm={12} md={12} item>
                     <FormControl className={classes.selectContainer}>
-                        <InputLabel id="viewgroups-label">Operador Visualiza Grupos?</InputLabel>
+                        <InputLabel id="viewgroups-label">Agente Visualiza Grupos?</InputLabel>
                         <Select
                             labelId="viewgroups-label"
                             value={viewgroups}
@@ -664,10 +664,10 @@ export default function Options(props) {
                                 handleviewgroups(e.target.value);
                             }}
                         >
-                            <MenuItem value={"disabled"}>Não</MenuItem>
-                            <MenuItem value={"enabled"}>Sim</MenuItem>
+                            <MenuItem value={"disabled"}>No</MenuItem>
+                            <MenuItem value={"enabled"}>Sí</MenuItem>
                         </Select>
-                        <FormHelperText>{loadingviewgroups && "Atualizando..."}</FormHelperText>
+                        <FormHelperText>{loadingviewgroups && "Actualizando..."}</FormHelperText>
                     </FormControl>
                 </Grid>
             </Grid>
@@ -688,13 +688,13 @@ export default function Options(props) {
                                     marginTop: 20,
                                 }}
                             >
-                                <Tab label="Configurações Globais" />
+                                <Tab label="Configuraciones Globales" />
                             </Tabs>
                         </Grid>
 
                         <Grid xs={12} sm={12} md={12} item>
                             <FormControl className={classes.selectContainer}>
-                                <InputLabel id="allowregister-label">Registro (Inscrição) Permitida?</InputLabel>
+                                <InputLabel id="allowregister-label">Registro (Inscripción) Permitida?</InputLabel>
                                 <Select
                                     labelId="allowregister-label"
                                     value={allowregister}
@@ -702,16 +702,16 @@ export default function Options(props) {
                                         handleallowregister(e.target.value);
                                     }}
                                 >
-                                    <MenuItem value={"disabled"}>Não</MenuItem>
-                                    <MenuItem value={"enabled"}>Sim</MenuItem>
+                                    <MenuItem value={"disabled"}>No</MenuItem>
+                                    <MenuItem value={"enabled"}>Sí</MenuItem>
                                 </Select>
-                                <FormHelperText>{loadingallowregister && "Atualizando..."}</FormHelperText>
+                                <FormHelperText>{loadingallowregister && "Actualizando..."}</FormHelperText>
                             </FormControl>
                         </Grid>
 
                         <Grid xs={12} sm={12} md={12} item>
                             <FormControl className={classes.selectContainer}>
-                                <InputLabel id="viewregister-label">Registro (Inscrição) Visível?</InputLabel>
+                                <InputLabel id="viewregister-label">Registro (Inscripción) Visible?</InputLabel>
                                 <Select
                                     labelId="viewregister-label"
                                     value={viewregister}
@@ -719,8 +719,8 @@ export default function Options(props) {
                                         handleviewregister(e.target.value);
                                     }}
                                 >
-                                    <MenuItem value={"disabled"}>Não</MenuItem>
-                                    <MenuItem value={"enabled"}>Sim</MenuItem>
+                                    <MenuItem value={"disabled"}>No</MenuItem>
+                                    <MenuItem value={"enabled"}>Sí</MenuItem>
                                 </Select>
                                 <FormHelperText>{loadingviewregister && "Atualizando..."}</FormHelperText>
                             </FormControl>
@@ -728,7 +728,7 @@ export default function Options(props) {
 
                         <Grid xs={12} sm={12} md={12} item>
                             <FormControl className={classes.selectContainer}>
-                                <InputLabel id="trial-label">Tempo de Trial?</InputLabel>
+                                <InputLabel id="trial-label">Tiempo de Prueba?</InputLabel>
                                 <Select
                                     labelId="trial-label"
                                     value={trial}
@@ -744,159 +744,20 @@ export default function Options(props) {
                                     <MenuItem value={"6"}>6</MenuItem>
                                     <MenuItem value={"7"}>7</MenuItem>
                                 </Select>
-                                <FormHelperText>{loadingtrial && "Atualizando..."}</FormHelperText>
+                                <FormHelperText>{loadingtrial && "Actualizando..."}</FormHelperText>
                             </FormControl>
                         </Grid>
                     </>
                 )}
             />
-            <Grid spacing={3} container>
-                <Tabs
-                    indicatorColor="primary"
-                    textColor="primary"
-                    scrollButtons="on"
-                    variant="scrollable"
-                    className={classes.tab}
-                    style={{
-                        marginBottom: 20,
-                        marginTop: 20,
-                    }}
-                >
-                    <Tab label="INTEGRAÇÕES" />
-                </Tabs>
-            </Grid>
+            {/*-----------------SUPER USER-----------------*/}
             {/*-----------------IXC-----------------*/}
-            <Grid spacing={3} container style={{ marginBottom: 10 }}>
-                <Tabs
-                    indicatorColor="primary"
-                    textColor="primary"
-                    scrollButtons="on"
-                    variant="scrollable"
-                    className={classes.tab}
-                >
-                    <Tab label="IXC" />
-                </Tabs>
-                <Grid xs={12} sm={6} md={6} item>
-                    <FormControl className={classes.selectContainer}>
-                        <TextField
-                            id="ipixc"
-                            name="ipixc"
-                            margin="dense"
-                            label="IP do IXC"
-                            variant="outlined"
-                            value={ipixcType}
-                            onChange={async (e) => {
-                                handleChangeIPIxc(e.target.value);
-                            }}
-                        ></TextField>
-                        <FormHelperText>{loadingIpIxcType && "Atualizando..."}</FormHelperText>
-                    </FormControl>
-                </Grid>
-                <Grid xs={12} sm={6} md={6} item>
-                    <FormControl className={classes.selectContainer}>
-                        <TextField
-                            id="tokenixc"
-                            name="tokenixc"
-                            margin="dense"
-                            label="Token do IXC"
-                            variant="outlined"
-                            value={tokenixcType}
-                            onChange={async (e) => {
-                                handleChangeTokenIxc(e.target.value);
-                            }}
-                        ></TextField>
-                        <FormHelperText>{loadingTokenIxcType && "Atualizando..."}</FormHelperText>
-                    </FormControl>
-                </Grid>
-            </Grid>
+            
             {/*-----------------MK-AUTH-----------------*/}
-            <Grid spacing={3} container style={{ marginBottom: 10 }}>
-                <Tabs
-                    indicatorColor="primary"
-                    textColor="primary"
-                    scrollButtons="on"
-                    variant="scrollable"
-                    className={classes.tab}
-                >
-                    <Tab label="MK-AUTH" />
-                </Tabs>
-                <Grid xs={12} sm={12} md={4} item>
-                    <FormControl className={classes.selectContainer}>
-                        <TextField
-                            id="ipmkauth"
-                            name="ipmkauth"
-                            margin="dense"
-                            label="Ip Mk-Auth"
-                            variant="outlined"
-                            value={ipmkauthType}
-                            onChange={async (e) => {
-                                handleChangeIpMkauth(e.target.value);
-                            }}
-                        ></TextField>
-                        <FormHelperText>{loadingIpMkauthType && "Atualizando..."}</FormHelperText>
-                    </FormControl>
-                </Grid>
-                <Grid xs={12} sm={12} md={4} item>
-                    <FormControl className={classes.selectContainer}>
-                        <TextField
-                            id="clientidmkauth"
-                            name="clientidmkauth"
-                            margin="dense"
-                            label="Client Id"
-                            variant="outlined"
-                            value={clientidmkauthType}
-                            onChange={async (e) => {
-                                handleChangeClientIdMkauth(e.target.value);
-                            }}
-                        ></TextField>
-                        <FormHelperText>{loadingClientIdMkauthType && "Atualizando..."}</FormHelperText>
-                    </FormControl>
-                </Grid>
-                <Grid xs={12} sm={12} md={4} item>
-                    <FormControl className={classes.selectContainer}>
-                        <TextField
-                            id="clientsecretmkauth"
-                            name="clientsecretmkauth"
-                            margin="dense"
-                            label="Client Secret"
-                            variant="outlined"
-                            value={clientsecretmkauthType}
-                            onChange={async (e) => {
-                                handleChangeClientSecrectMkauth(e.target.value);
-                            }}
-                        ></TextField>
-                        <FormHelperText>{loadingClientSecrectMkauthType && "Atualizando..."}</FormHelperText>
-                    </FormControl>
-                </Grid>
-            </Grid>
+            
             {/*-----------------ASAAS-----------------*/}
-            <Grid spacing={3} container style={{ marginBottom: 10 }}>
-                <Tabs
-                    indicatorColor="primary"
-                    textColor="primary"
-                    scrollButtons="on"
-                    variant="scrollable"
-                    className={classes.tab}
-                >
-                    <Tab label="ASAAS" />
-                </Tabs>
-                <Grid xs={12} sm={12} md={12} item>
-                    <FormControl className={classes.selectContainer}>
-                        <TextField
-                            id="asaas"
-                            name="asaas"
-                            margin="dense"
-                            label="Token Asaas"
-                            variant="outlined"
-                            value={asaasType}
-                            onChange={async (e) => {
-                                handleChangeAsaas(e.target.value);
-                            }}
-                        ></TextField>
-                        <FormHelperText>{loadingAsaasType && "Atualizando..."}</FormHelperText>
-                    </FormControl>
-                </Grid>
-            </Grid>
+            
+            
         </>
     );
 }
