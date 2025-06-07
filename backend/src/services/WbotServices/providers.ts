@@ -169,7 +169,7 @@ export const provider = async (ticket: Ticket, msg: proto.IWebMessageInfo, compa
                         await sleep(2000)
                         await wbot.sendMessage(`${ticket.contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`, bodyLinha);
                         if (qrcode !== null) {
-                          const bodyPdf = { text: formatBody(`Este é o *PIX COPIA E COLA*`, contact) };
+                          const bodyPdf = { text: formatBody(`Este é o *PIX COPIA E Area*`, contact) };
                           await sleep(2000)
                           await wbot.sendMessage(`${ticket.contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`, bodyPdf);
                           const bodyqrcode = { text: formatBody(`${qrcode}`, contact) };
@@ -403,7 +403,7 @@ export const provider = async (ticket: Ticket, msg: proto.IWebMessageInfo, compa
 
                         if (success === true) {
                           const bodyPixCP = {
-                            text: formatBody(`Este é o *PIX Copia e Cola*`, contact),
+                            text: formatBody(`Este é o *PIX Copia e Area*`, contact),
                           };
                           await sleep(2000)
                           await wbot.sendMessage(`${ticket.contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`, bodyPixCP);
@@ -541,7 +541,7 @@ export const provider = async (ticket: Ticket, msg: proto.IWebMessageInfo, compa
                       if (success === true) {
 
                         const bodyPixCP = {
-                          text: formatBody(`Este é o *PIX Copia e Cola*`, contact),
+                          text: formatBody(`Este é o *PIX Copia e Area*`, contact),
                         };
                         await sleep(2000)
                         await wbot.sendMessage(`${ticket.contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`, bodyPixCP);
@@ -812,7 +812,7 @@ export const provider = async (ticket: Ticket, msg: proto.IWebMessageInfo, compa
                       };
                       await wbot.sendMessage(`${ticket.contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`, body_linha_digitavel);
                       const body_pix = {
-                        text: formatBody("Este é o *PIX Copia e Cola*", contact),
+                        text: formatBody("Este é o *PIX Copia e Area*", contact),
                       };
                       await sleep(2000)
                       await wbot.sendMessage(`${ticket.contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`, body_pix);

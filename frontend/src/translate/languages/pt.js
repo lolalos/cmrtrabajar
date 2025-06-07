@@ -133,11 +133,11 @@ const messages = {
         form: {
           name: "Nombre",
           default: "Predeterminado",
-          sendIdQueue: "Cola",
-          timeSendQueue: "Redireccionar a la cola en X minutos",
-          queueRedirection: "Redireccionamiento de Cola",
+          sendIdQueue: "Area",
+          timeSendQueue: "Redireccionar a la Area en X minutos",
+          queueRedirection: "Redireccionamiento de Area",
           outOfHoursMessage: "Mensaje fuera del horario de atención",
-          queueRedirectionDesc: "Selecciona una cola para que los contactos sin cola sean redireccionados",
+          queueRedirectionDesc: "Selecciona una Area para que los contactos sin Area sean redireccionados",
           prompt: "Instrucción", // 'Prompt' en este contexto se refiere a una instrucción para un bot o IA
           // maxUseBotQueues: "Enviar bot X veces",
           // timeUseBotQueues: "Intervalo en minutos entre envíos de bot",
@@ -145,7 +145,7 @@ const messages = {
           expiresInactiveMessage: "Mensaje de cierre por inactividad",
           greetingMessage: "Mensaje de bienvenida",
           complationMessage: "Mensaje de finalización",
-          sendIdQueue: "Cola",
+          sendIdQueue: "Area",
         },
         buttons: {
           okAdd: "Añadir",
@@ -254,7 +254,7 @@ const messages = {
         title: "Instrucciones",
         table: {
           name: "Nombre",
-          queue: "Sector/Cola",
+          queue: "Sector/Area",
           max_tokens: "Máx. Tokens Respuesta",
           actions: "Acciones",
         },
@@ -292,8 +292,8 @@ const messages = {
       },
       queueModal: {
         title: {
-          add: "Añadir cola",
-          edit: "Editar cola",
+          add: "Añadir Area",
+          edit: "Editar Area",
         },
         confirmationModal: {
           "deleteTitle": "Eliminar",
@@ -306,7 +306,7 @@ const messages = {
           outOfHoursMessage: "Mensaje fuera del horario de atención",
           ratingMessage: "Mensaje de evaluación",
           token: "Token",
-          orderQueue: "Orden de la cola (Bot)",
+          orderQueue: "Orden de la Area (Bot)",
           integrationId: "Integración",
         },
         buttons: {
@@ -341,7 +341,7 @@ const messages = {
           password: "Contraseña",
           profile: "Perfil",
           whatsapp: "Conexión Predeterminada",
-          allTicket: "Ticket Sin Cola [Invisible]",
+          allTicket: "Ticket Sin Area [Invisible]",
           allTicketEnabled: "Habilitado",
           allTicketDesabled: "Deshabilitado",
         },
@@ -445,8 +445,8 @@ const messages = {
       transferTicketModal: {
         title: "Transferir Ticket",
         fieldLabel: "Escribe para buscar usuarios",
-        fieldQueueLabel: "Transferir a cola",
-        fieldQueuePlaceholder: "Selecciona una cola",
+        fieldQueueLabel: "Transferir a Area",
+        fieldQueuePlaceholder: "Selecciona una Area",
         noOptions: "Ningún usuario encontrado con ese nombre",
         buttons: {
           ok: "Transferir",
@@ -527,7 +527,7 @@ const messages = {
         confirmationModal: {
           deleteTitle: "Eliminar",
           deleteMessage:
-            "¿Estás seguro? ¡Esta acción no se puede revertir! Y será eliminada de las colas y conexiones vinculadas.",
+            "¿Estás seguro? ¡Esta acción no se puede revertir! Y será eliminada de las Areas y conexiones vinculadas.",
         },
       },
       reports: {
@@ -540,7 +540,7 @@ const messages = {
           NPS: "NPS",
           status: "Estado",
           whatsapp: "Conexión",
-          queue: "Cola",
+          queue: "Area",
           actions: "Acciones",
           lastMessage: "Últ. Mensaje",
           contact: "Cliente",
@@ -816,26 +816,26 @@ const messages = {
         title: "Configuraciones de Campañas",
       },
       queues: {
-        title: "Colas & Chatbot",
+        title: "Areas & Chatbot",
         table: {
           id: "ID",
           name: "Nombre",
           color: "Color",
           greeting: "Mensaje de bienvenida",
           actions: "Acciones",
-          orderQueue: "Orden de la cola (bot)",
+          orderQueue: "Orden de la Area (bot)",
         },
         buttons: {
-          add: "Añadir cola",
+          add: "Añadir Area",
         },
         confirmationModal: {
           deleteTitle: "Eliminar",
           deleteMessage:
-            "¿Estás seguro? ¡Esta acción no se puede revertir! Las atenciones de esta cola seguirán existiendo, pero ya no tendrán ninguna cola asignada.",
+            "¿Estás seguro? ¡Esta acción no se puede revertir! Las atenciones de esta Area seguirán existiendo, pero ya no tendrán ninguna Area asignada.",
         },
       },
       queueSelect: {
-        inputLabel: "Colas",
+        inputLabel: "Areas",
       },
       users: {
         title: "Usuarios",
@@ -860,7 +860,7 @@ const messages = {
         confirmationModal: {
           deleteTitle: "Eliminar",
           deleteMessage:
-            "Todos los datos del usuario se perderán. Las atenciones abiertas de este usuario se moverán a la cola.",
+            "Todos los datos del usuario se perderán. Las atenciones abiertas de este usuario se moverán a la Area.",
         },
       },
       helps: {
@@ -1041,7 +1041,7 @@ const messages = {
         ERR_QUEUE_COLOR_ALREADY_EXISTS:
           "Este color ya está en uso, elige otro.",
         ERR_WAPP_GREETING_REQUIRED:
-          "El mensaje de bienvenida es obligatorio cuando hay más de una cola.",
+          "El mensaje de bienvenida es obligatorio cuando hay más de una Area.",
         ERR_CHECK_NUMBER: "Número inválido. Verifica el número e inténtalo de nuevo.",
       },
     },

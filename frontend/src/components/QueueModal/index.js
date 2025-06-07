@@ -209,7 +209,7 @@ const QueueModal = ({ open, onClose, queueId }) => {
         await api.put(`/queue/${queueId}`, {
           ...values, schedules, promptId: selectedPrompt ? selectedPrompt : null
         });
-		if (attachment != null) {
+    if (attachment != null) {
           const formData = new FormData();
           formData.append("file", attachment);
           await api.post(`/queue/${queueId}/media-upload`, formData);
@@ -218,13 +218,13 @@ const QueueModal = ({ open, onClose, queueId }) => {
         await api.post("/queue", {
           ...values, schedules, promptId: selectedPrompt ? selectedPrompt : null
         });
-		if (attachment != null) {
+    if (attachment != null) {
           const formData = new FormData();
           formData.append("file", attachment);
           await api.post(`/queue/${queueId}/media-upload`, formData);
       }
-	  }
-      toast.success("Queue saved successfully");
+    }
+      toast.success("Queue saved successfully"); // This was already in English
       handleClose();
     } catch (err) {
       toastError(err);
@@ -232,7 +232,7 @@ const QueueModal = ({ open, onClose, queueId }) => {
   };
 
   const handleSaveSchedules = async (values) => {
-    toast.success("Clique em salvar para registar as alterações");
+    toast.success("Haz clic en guardar para registrar los cambios"); // Translated from Portuguese
     setSchedules(values);
     setTab(0);
   };
@@ -275,8 +275,8 @@ const QueueModal = ({ open, onClose, queueId }) => {
           onChange={(_, v) => setTab(v)}
           aria-label="disabled tabs example"
         >
-          <Tab label="Dados da Fila" />
-          {schedulesEnabled && <Tab label="Horários de Atendimento" />}
+          <Tab label="Datos de la Area" /> {/* Translated from Portuguese */}
+          {schedulesEnabled && <Tab label="Horarios de Atención" />} {/* Translated from Portuguese */}
         </Tabs>
         {tab === 0 && (
           <Paper>
@@ -379,7 +379,7 @@ const QueueModal = ({ open, onClose, queueId }) => {
                           labelId="integrationId-selection-label"
                           value={values.integrationId || ""}
                         >
-                          <MenuItem value={""} >{"Nenhum"}</MenuItem>
+                          <MenuItem value={""} >{"Ninguno"}</MenuItem> {/* Translated from Portuguese */}
                           {integrations.map((integration) => (
                             <MenuItem key={integration.id} value={integration.id}>
                               {integration.name}
@@ -536,7 +536,7 @@ const QueueModal = ({ open, onClose, queueId }) => {
               loading={false}
               onSubmit={handleSaveSchedules}
               initialValues={schedules}
-              labelSaveButton="Adicionar"
+              labelSaveButton="Añadir" // Translated from Portuguese
             />
           </Paper>
         )}
@@ -546,3 +546,4 @@ const QueueModal = ({ open, onClose, queueId }) => {
 };
 
 export default QueueModal;
+

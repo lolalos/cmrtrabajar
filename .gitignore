@@ -1,0 +1,27 @@
+# Exclusiones específicas del backend
+
+# Ignorar el archivo package-lock.json del backend
+backend/package-lock.json
+
+# Ignorar la carpeta node_modules del backend
+backend/node_modules/
+
+# Ignorar la carpeta dist del backend
+backend/dist/
+
+# Ignorar la carpeta public del backend
+backend/public/
+
+# Ignorar el archivo .env del backend
+backend/.env
+
+# Exclusiones específicas del frontend
+
+# Ignorar el archivo package-lock.json del frontend
+frontend/package-lock.json
+
+# Ignorar la carpeta node_modules del frontend
+frontend/node_modules/
+
+# Ignorar la carpeta build del frontend
+frontend/build/

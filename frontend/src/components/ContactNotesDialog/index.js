@@ -82,7 +82,7 @@ export default function ContactNotesDialog ({ modalOpen, onClose, ticket }) {
             })
             await loadNotes()
             setNewNote({ note: '' })
-            toast.success('Observação adicionada com sucesso!')
+            toast.success('¡Observación añadida con éxito!')
         } catch (e) {
             toast.error(e)
         }
@@ -100,7 +100,7 @@ export default function ContactNotesDialog ({ modalOpen, onClose, ticket }) {
             await deleteNote(selectedNote.id)
             await loadNotes()
             setSelectedNote({})
-            toast.success('Observação excluída com sucesso!')
+            toast.success('¡Observación eliminada con éxito!')
         } catch (e) {
             toast.error(e)
         }
@@ -140,7 +140,7 @@ export default function ContactNotesDialog ({ modalOpen, onClose, ticket }) {
                 onClose={setShowOnDeleteDialog}
                 onConfirm={handleDelete}
             >
-                Deseja realmente excluir este registro?
+                ¿Realmente desea eliminar este registro?
             </ConfirmationModal>
             <Dialog
                 maxWidth="md"
@@ -189,10 +189,10 @@ export default function ContactNotesDialog ({ modalOpen, onClose, ticket }) {
                             </DialogContent>
                             <DialogActions>
                                 <Button onClick={handleClose} color="primary">
-                                    Fechar
+                                    Cerrar
                                 </Button>
                                 <ButtonWithSpinner loading={loading} color="primary" type="submit" variant="contained" autoFocus>
-                                    Salvar
+                                    Guardar
                                 </ButtonWithSpinner>
                             </DialogActions>
                         </Form>

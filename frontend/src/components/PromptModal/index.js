@@ -63,7 +63,7 @@ const PromptSchema = Yup.object().shape({
     max_tokens: Yup.number().required("Indique el número máximo de tokens"),
     temperature: Yup.number().required("Indique la temperatura"),
     apikey: Yup.string().required("Indique la API Key"),
-    queueId: Yup.number().required("Indique la cola"),
+    queueId: Yup.number().required("Indique la Area"),
     max_messages: Yup.number().required("Indique el número máximo de mensajes")
 });
 
@@ -262,8 +262,8 @@ const PromptModal = ({ open, onClose, promptId }) => {
                                             <MenuItem key={"pt-BR-ManuelaNeural"} value={"pt-BR-ManuelaNeural"}>
                                                 Manuela
                                             </MenuItem>
-                                            <MenuItem key={"pt-BR-NicolauNeural"} value={"pt-BR-NicolauNeural"}>
-                                                Nicolau
+                                            <MenuItem key={"pt-BR-NiAreauNeural"} value={"pt-BR-NiAreauNeural"}>
+                                                NiAreau
                                             </MenuItem>
                                             <MenuItem key={"pt-BR-ValerioNeural"} value={"pt-BR-ValerioNeural"}>
                                                 Valério

@@ -622,7 +622,7 @@ export default function Options(props) {
                 <Grid xs={12} sm={12} md={12} item>
                     <FormControl className={classes.selectContainer}>
                         <InputLabel id="sendGreetingMessageOneQueues-label">
-                            Enviar saludo cuando solo hay 1 cola
+                            Enviar saludo cuando solo hay 1 Area
                         </InputLabel>
                         <Select
                             labelId="sendGreetingMessageOneQueues-label"
