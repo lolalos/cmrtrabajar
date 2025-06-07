@@ -435,7 +435,7 @@ const messages = {
             closed: "Cerrado",
             pending: "Pendiente",
           },
-          filterUsers: "Filtro por Usuarios",
+          filterUsers: "Filtro por Colaborador",
           ticketsPerPage: "Tickets por página",
         },
         buttons: {
@@ -971,9 +971,9 @@ const messages = {
         schedule: "Agendamiento",
         delete: "Eliminar",
         transfer: "Transferir",
-        registerAppointment: "Observaciones del Contacto",
+        registerAppointment: "Observaciones para el Cliente",
         appointmentsModal: {
-          title: "Observaciones del Contacto",
+          title: "Observaciones para el Cliente",
           textarea: "Observación",
           placeholder: "Inserta aquí la información que deseas registrar",
         },
