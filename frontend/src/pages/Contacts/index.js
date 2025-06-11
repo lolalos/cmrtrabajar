@@ -42,10 +42,10 @@ import {CSVLink} from "react-csv";
 
 import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
 import {
-    ArrowDropDown,
-    Backup,
-    CloudDownload,
-    ContactPhone,
+  ArrowDropDown,
+  Backup,
+  CloudDownload,
+  ContactPhone,
 } from "@material-ui/icons";
 import { Menu, MenuItem } from "@material-ui/core";
 
@@ -119,33 +119,12 @@ const Contacts = () => {
   const [deletingContact, setDeletingContact] = useState(null);
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [hasMore, setHasMore] = useState(false);
-  const [selectAll, setSelectAll] = useState(false); // Estado para controlar se todos os checkboxes estão marcados
-  const [selectedContacts, setSelectedContacts] = useState([]);
+  // Eliminado selectAll y selectedContacts
   const fileUploadRef = useRef(null);
 
-  
-  useEffect(() => {
-    if (selectAll) {
-        setSelectedContacts(contacts.map((contact) => contact.id));
-    } else {
-        setSelectedContacts([]);
-    }
-}, [contacts, selectAll]);
+  // Eliminado useEffect relacionado a selectAll y selectedContacts
 
-const handleSelectAll = () => {
-    setSelectAll(!selectAll); // Alterna o estado de selectAll
-};
-
-
-const handleCheckboxChange = (contactId) => {
-  setSelectedContacts((prevSelected) => {
-      if (prevSelected.includes(contactId)) {
-          return prevSelected.filter((id) => id !== contactId);
-      } else {
-          return [...prevSelected, contactId];
-      }
-  });
-};
+  // Eliminado handleSelectAll y handleCheckboxChange
 
   const socketManager = useContext(SocketContext);
 
@@ -207,22 +186,6 @@ const handleCheckboxChange = (contactId) => {
     setContactModalOpen(false);
   };
 
-  // const handleSaveTicket = async contactId => {
-  // 	if (!contactId) return;
-  // 	setLoading(true);
-  // 	try {
-  // 		const { data: ticket } = await api.post("/tickets", {
-  // 			contactId: contactId,
-  // 			userId: user?.id,
-  // 			status: "open",
-  // 		});
-  // 		history.push(`/tickets/${ticket.id}`);
-  // 	} catch (err) {
-  // 		toastError(err);
-  // 	}
-  // 	setLoading(false);
-  // };
-
   const handleCloseOrOpenTicket = (ticket) => {
     setNewTicketModalOpen(false);
     if (ticket !== undefined && ticket.uuid !== undefined) {
@@ -247,24 +210,8 @@ const handleCheckboxChange = (contactId) => {
     setPageNumber(1);
   };
 
-  
-  const handleDeleteSelectedContacts = async () => {
-    try {
-        for (const contactId of selectedContacts) {
-            await api.delete(`/contacts/${contactId}`);
-        }
-        toast.success(i18n.t("contacts.toasts.deleted"));
-        setSelectedContacts([]);
-        setSelectAll(false);
+  // Eliminado handleDeleteSelectedContacts
 
-        setSearchParam("");
-        setPageNumber(1);
-    } catch (err) {
-        toastError(err);
-    }
-};
-
-  
   const handleimportContact = async () => {
     try {
       if (!!fileUploadRef.current.files[0]) {
@@ -283,26 +230,26 @@ const handleCheckboxChange = (contactId) => {
       toastError(err);
     }
   };
-  
-function getDateLastMessage(contact) {
+
+  function getDateLastMessage(contact) {
     if (!contact) return null;
     if (!contact.tickets) return null;
 
     if (contact.tickets.length > 0) {
-        const date = new Date(contact.tickets[contact.tickets.length - 1].updatedAt);
+      const date = new Date(contact.tickets[contact.tickets.length - 1].updatedAt);
 
-        const day = date.getDate() > 9 ? date.getDate() : `0${date.getDate()}`;
-        const month = (date.getMonth() + 1) > 9 ? (date.getMonth() + 1) : `0${date.getMonth() + 1}`;
-        const year = date.getFullYear().toString().slice(-2);
+      const day = date.getDate() > 9 ? date.getDate() : `0${date.getDate()}`;
+      const month = (date.getMonth() + 1) > 9 ? (date.getMonth() + 1) : `0${date.getMonth() + 1}`;
+      const year = date.getFullYear().toString().slice(-2);
 
-        const hours = date.getHours() > 9 ? date.getHours() : `0${date.getHours()}`;
-        const minutes = date.getMinutes() > 9 ? date.getMinutes() : `0${date.getMinutes()}`;
+      const hours = date.getHours() > 9 ? date.getHours() : `0${date.getHours()}`;
+      const minutes = date.getMinutes() > 9 ? date.getMinutes() : `0${date.getMinutes()}`;
 
-        return `${day}/${month}/${year} ${hours}:${minutes}`;
+      return `${day}/${month}/${year} ${hours}:${minutes}`;
     }
 
     return null;
-}
+  }
 
   const loadMore = () => {
     setPageNumber((prevState) => prevState + 1);
@@ -367,92 +314,75 @@ function getDateLastMessage(contact) {
               ),
             }}
           />
-          <Button
-          variant="contained"
-          color="primary"
-          onClick={handleSelectAll}
-      >
-          {selectAll ? "Desmarcar Todos" : "Marcar Todos"}
-        </Button>
-
-      <Can
-      role={user.profile}
-      perform="contacts-page:deleteContact"
-      yes={() => (
-          <Button
-              variant="contained"
-              color="primary"
-              onClick={handleDeleteSelectedContacts}
-          >
-              {selectAll ? "Excluir Todos" : "Excluir"}
-          </Button>
-      )}
-      />	
-
-         <PopupState variant="popover" popupId="demo-popup-menu">
-             {(popupState) => (
-             <React.Fragment>
-                                <Button
-                                    variant="contained"
-                                    color="primary"
-                                    {...bindTrigger(popupState)}
-                                >
-                                    Importar / Exportar
-                                    <ArrowDropDown />
-                                </Button>
-								<Menu {...bindMenu(popupState)}>
-									<MenuItem
-										onClick={() => {
-											setConfirmOpen(true);
-											popupState.close();
-										}}
-									>
-									<ContactPhone
-                                            fontSize="small"
-                                            color="primary"
-                                            style={{
-                                                marginRight: 10,
-                                            }}
-                                        />
-										{i18n.t("contacts.buttons.import")}
-									</MenuItem>
-									<MenuItem
-										onClick={() => {
-											fileUploadRef.current.value = null; // Limpa o valor do input
-											fileUploadRef.current.click(); // Dispara o clique no input de upload
-											popupState.close(); // Fecha o menu
-										}}
-									>
-											<Backup
-                                            fontSize="small"
-                                            color="primary"
-                                            style={{
-                                                marginRight: 10,
-                                            }}
-                                        />
-										{i18n.t("contacts.buttons.importSheet")}
-									</MenuItem>
-                                    <MenuItem>
-                        
-									<CSVLink style={{ textDecoration:'none' }} separator=";" filename={'contactos.csv'} 
-									data={contacts.map((contact) => ({ name: contact.name, number: contact.number, email: contact.email }))}>
-                                        
-                                        <CloudDownload fontSize="small"
-                                            color="primary"
-                                            style={{
-                                                marginRight: 10,
-                                            
-                                                }}                                                
-                                        />        
-                                        Exportar Excel                                
-                                   </CSVLink>
-                                        
-                                    </MenuItem>
-                                </Menu>
-                            </React.Fragment>
-                        )}
-                    </PopupState>
-					
+          {/* Eliminado botón de eliminar marcados */}
+          <PopupState variant="popover" popupId="demo-popup-menu">
+            {(popupState) => (
+              <React.Fragment>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  {...bindTrigger(popupState)}
+                >
+                  Importar / Exportar
+                  <ArrowDropDown />
+                </Button>
+                <Menu {...bindMenu(popupState)}>
+                  <MenuItem
+                    onClick={() => {
+                      setConfirmOpen(true);
+                      popupState.close();
+                    }}
+                  >
+                    <ContactPhone
+                      fontSize="small"
+                      color="primary"
+                      style={{
+                        marginRight: 10,
+                      }}
+                    />
+                    {i18n.t("contacts.buttons.import")}
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => {
+                      fileUploadRef.current.value = null;
+                      fileUploadRef.current.click();
+                      popupState.close();
+                    }}
+                  >
+                    <Backup
+                      fontSize="small"
+                      color="primary"
+                      style={{
+                        marginRight: 10,
+                      }}
+                    />
+                    {i18n.t("contacts.buttons.importSheet")}
+                  </MenuItem>
+                  <MenuItem>
+                    <CSVLink
+                      style={{ textDecoration: 'none' }}
+                      separator=";"
+                      filename={'contactos.csv'}
+                      data={contacts.map((contact) => ({
+                        name: contact.name,
+                        number: contact.number,
+                        email: contact.email
+                      }))}
+                    >
+                      <CloudDownload
+                        fontSize="small"
+                        color="primary"
+                        style={{
+                          marginRight: 10,
+                        }}
+                      />
+                      Exportar Excel
+                    </CSVLink>
+                  </MenuItem>
+                </Menu>
+              </React.Fragment>
+            )}
+          </PopupState>
           <Button
             variant="contained"
             color="primary"
@@ -460,7 +390,6 @@ function getDateLastMessage(contact) {
           >
             {i18n.t("contacts.buttons.add")}
           </Button>
-
         </MainHeaderButtonsWrapper>
       </MainHeader>
       <Paper
@@ -470,24 +399,24 @@ function getDateLastMessage(contact) {
       >
         <>
           <input
-              style={{ display: "none" }}
-              id="upload"
-              name="file"
-              type="file"
-              accept=".xls,.xlsx"
-              onChange={() => {
-                setConfirmOpen(true);
-              }}
-              ref={fileUploadRef}
+            style={{ display: "none" }}
+            id="upload"
+            name="file"
+            type="file"
+            accept=".xls,.xlsx"
+            onChange={() => {
+              setConfirmOpen(true);
+            }}
+            ref={fileUploadRef}
           />
         </>
         <Table size="small">
           <TableHead>
             <TableRow>
-            <TableCell padding="checkbox" align="center"/>
-            <TableCell >
+              {/* Eliminado checkbox de marcar todos */}
+              <TableCell>
                 {i18n.t("Foto de Perfil")}
-            </TableCell>
+              </TableCell>
               <TableCell>{i18n.t("contacts.table.name")}</TableCell>
               <TableCell align="center">
                 {i18n.t("contacts.table.whatsapp")}
@@ -496,9 +425,9 @@ function getDateLastMessage(contact) {
                 {i18n.t("contacts.table.email")}
               </TableCell>
               <TableCell align="center">
-              {"Última Interação"}
+                {"Última Interaccion"}
               </TableCell>
-			  <TableCell align="center">{"Status"}</TableCell>
+              <TableCell align="center">{"Status"}</TableCell>
               <TableCell align="center">
                 {i18n.t("contacts.table.actions")}
               </TableCell>
@@ -506,36 +435,31 @@ function getDateLastMessage(contact) {
           </TableHead>
           <TableBody>
             <>
-                            {contacts.map((contact) => (
-                                <TableRow key={contact.id}>
-                                    <TableCell padding="checkbox">
-                                        <Checkbox
-                                            checked={selectedContacts.includes(contact.id)}
-                                            onChange={() => handleCheckboxChange(contact.id)}
-                                        />
-                                    </TableCell>
-                                    <TableCell style={{ paddingLeft: 40 }}>
-                                        {<Avatar src={contact.profilePicUrl} />}
-                                    </TableCell>
+              {contacts.map((contact) => (
+                <TableRow key={contact.id}>
+                  {/* Eliminado checkbox individual */}
+                  <TableCell style={{ paddingLeft: 40 }}>
+                    {<Avatar src={contact.profilePicUrl} />}
+                  </TableCell>
                   <TableCell>{contact.name}</TableCell>
                   <TableCell align="center">{contact.number}</TableCell>
                   <TableCell align="center">{contact.email}</TableCell>
-                                    <TableCell align="center">
-                                        {getDateLastMessage(contact)}
-                                    </TableCell>
-                                    <TableCell align="center">
-                                        {contact.active ? (
-                                            <CheckCircleIcon
-                                                style={{ color: "green" }}
-                                                fontSize="small"
-                                            />
-                                        ) : (
-                                            <CancelIcon
-                                                style={{ color: "red" }}
-                                                fontSize="small"
-                                            />
-                                        )}
-                                    </TableCell>
+                  <TableCell align="center">
+                    {getDateLastMessage(contact)}
+                  </TableCell>
+                  <TableCell align="center">
+                    {contact.active ? (
+                      <CheckCircleIcon
+                        style={{ color: "green" }}
+                        fontSize="small"
+                      />
+                    ) : (
+                      <CancelIcon
+                        style={{ color: "red" }}
+                        fontSize="small"
+                      />
+                    )}
+                  </TableCell>
                   <TableCell align="center">
                     <IconButton
                       size="small"

@@ -283,7 +283,7 @@ const CampaignModal = ({
         placeholder={i18n.t("campaigns.dialog.form.messagePlaceholder")}
         multiline={true}
         variant="outlined"
-        helperText="Utilize variáveis como {nome}, {numero}, {email} ou defina variáveis personalziadas."
+        helperText="Utilice variables como {nome}, {numero}, {email} o defina varibles personalizadas"
         disabled={!campaignEditable && campaign.status !== "CANCELADA"}
       />
     );
@@ -478,7 +478,7 @@ const CampaignModal = ({
                         error={touched.tagListId && Boolean(errors.tagListId)}
                         disabled={!campaignEditable}
                       >
-                        <MenuItem value="">Nenhuma</MenuItem>
+                        <MenuItem value="">Ninguna</MenuItem>
                         {Array.isArray(tagLists) &&
                           tagLists.map((tagList) => (
                             <MenuItem key={tagList.id} value={tagList.id}>
@@ -508,7 +508,7 @@ const CampaignModal = ({
                         error={touched.whatsappId && Boolean(errors.whatsappId)}
                         disabled={!campaignEditable}
                       >
-                        <MenuItem value="">Nenhuma</MenuItem>
+                        <MenuItem value="">Ninguna</MenuItem>
                         {whatsapps &&
                           whatsapps.map((whatsapp) => (
                             <MenuItem key={whatsapp.id} value={whatsapp.id}>
