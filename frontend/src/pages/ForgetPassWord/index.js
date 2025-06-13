@@ -23,26 +23,22 @@ import moment from "moment";
 import { toast } from 'react-toastify';
 import toastError from '../../errors/toastError';
 import 'react-toastify/dist/ReactToastify.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"; // This import for Router, Route, Switch might not be needed in this component.
 
-// *** IMPORT YOUR LOGO HERE ***
-// Make sure this path matches the actual location of your logo in src/assets/
-import loginLogo from "../../assets/logo_login.png"; // Assuming it's the same logo as in the Login page
+import loginLogo from "../../assets/logo_login.png";
+import fondo from "../../assets/fondo.jpg"; // <-- Importa la imagen de fondo
 
 const useStyles = makeStyles((theme) => ({
-    root: {
+    root: props => ({
         width: "100vw",
         height: "100vh",
-        background: "black", //Cor de fundo
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "100% 100%",
-        backgroundPosition: "center",
+        background: `url(${fondo}) no-repeat center center fixed`, // <-- Usa la imagen como fondo
+        backgroundSize: "cover",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-    },
+    }),
     paper: {
         backgroundColor: "white",
         display: "flex",
@@ -56,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.secondary.main,
     },
     form: {
-        width: "100%", // Fix IE 11 issue.
+        width: "100%",
         marginTop: theme.spacing(1),
     },
     submit: {
@@ -69,15 +65,15 @@ const useStyles = makeStyles((theme) => ({
 
 const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
-const ForgetPassword = () => {
-    const classes = useStyles();
+const ForgetPassword = ({ backgroundColor }) => {
+    const classes = useStyles({ backgroundColor });
     const history = useHistory();
     let companyId = null;
     const [showAdditionalFields, setShowAdditionalFields] = useState(false);
     const [showResetPasswordButton, setShowResetPasswordButton] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-    const [error, setError] = useState(""); // Estado para mensagens de erro
+    const [error, setError] = useState("");
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -109,18 +105,13 @@ const ForgetPassword = () => {
     const handleSendEmail = async (values) => {
         const email = values.email;
         try {
-            // Updated API call to remove process.env.REACT_APP_BACKEND_URL from here too,
-            // assuming 'api' base URL is configured correctly in '../../services/api'
             const response = await api.post(`/forgetpassword/${email}`);
-            console.log("API Response:", response.data);
-
             if (response.data.status === 404) {
                 toast.error("Correo electrónico no encontrado");
             } else {
                 toast.success(i18n.t("¡Correo electrónico enviado con éxito!"));
             }
         } catch (err) {
-            console.log("API Error:", err);
             toastError(err);
         }
     };
@@ -133,14 +124,12 @@ const ForgetPassword = () => {
 
         if (newPassword === confirmPassword) {
             try {
-                // Updated API call to remove process.env.REACT_APP_BACKEND_URL from here too,
-                // assuming 'api' base URL is configured correctly in '../../services/api'
                 await api.post(`/resetpasswords/${email}/${token}/${newPassword}`);
-                setError(""); // Limpe o erro se não houver erro
+                setError("");
                 toast.success(i18n.t("Contraseña restablecida con éxito."));
                 history.push("/login");
             } catch (err) {
-                console.log(err);
+                setError("Error al restablecer la contraseña.");
             }
         }
     };
@@ -176,7 +165,7 @@ const ForgetPassword = () => {
                     <div>
                         <img
                             style={{ margin: "0 auto", height: "80px", width: "100%" }}
-                            src={loginLogo} // Using the imported logo directly
+                            src={loginLogo}
                             alt="Whats"
                         />
                     </div>

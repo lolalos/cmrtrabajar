@@ -195,10 +195,10 @@ const TicketsDurationReports = () => {
               <TableRow>
                 <TableCell align="center"> Contato </TableCell>
                 <TableCell align="center"> Abertos </TableCell>
-                <TableCell align="center"> Pendentes </TableCell>
+                <TableCell align="center"> Pendientes </TableCell>
                 <TableCell align="center"> Finalizados </TableCell>
-                <TableCell align="center"> Duração dos finalizados</TableCell>
-                <TableCell align="center"> Ações </TableCell>
+                <TableCell align="center"> Duracion de finalizados</TableCell>
+                <TableCell align="center"> Accionees </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
