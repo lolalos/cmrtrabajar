@@ -680,7 +680,7 @@ const MessagesList = ({ ticket, ticketId, isGroup }) => {
                                         ></path>
                                     </svg>{" "}
                                     <span>
-                                        Chamada de voz/vídeo perdida às {format(parseISO(message.createdAt), "HH:mm")}
+                                        Llamada de voz/video perdida a las {format(parseISO(message.createdAt), "HH:mm")}
                                     </span>
                                 </div>
                             </div>
@@ -731,7 +731,7 @@ const MessagesList = ({ ticket, ticketId, isGroup }) => {
                                 {message.isDeleted && (
                                     <div>
                                         <span className={"message-deleted"}>
-                                            Essa mensagem foi apagada pelo contato &nbsp;
+                                            Este mensaje fue eliminado por el contacto &nbsp;
                                             <Block color="error" fontSize="small" className={classes.deletedIcon} />
                                         </span>
                                     </div>
@@ -827,7 +827,7 @@ const MessagesList = ({ ticket, ticketId, isGroup }) => {
                                 {message.isForwarded && (
                                     <div>
                                         <span className={classes.forwardMessage}>
-                                            <Reply style={{ color: "grey", transform: "scaleX(-1)" }} /> Encaminhada
+                                            <Reply style={{ color: "grey", transform: "scaleX(-1)" }} /> Reenviado
                                         </span>
                                         <br />
                                     </div>
@@ -873,7 +873,7 @@ const MessagesList = ({ ticket, ticketId, isGroup }) => {
             });
             return viewMessagesList;
         } else {
-            return <div>Diga olá para seu novo contato!</div>;
+            return <div>¡Di hola a tu nuevo contacto!</div>;
         }
     };
 

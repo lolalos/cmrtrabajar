@@ -47,7 +47,7 @@ const wbotMonitor = async (
               const debouncedSentMessage = debounce(
                 async () => {
                   await wbot.sendMessage(from, {
-                    text: "*Mensagem Automática:*\nAs chamadas de voz e vídeo estão desabilitas para esse WhatsApp, favor enviar uma mensagem de texto. Obrigado"
+                    text: "*Mensaje Automático:*\nLas llamadas de voz y vídeo están deshabilitadas para este WhatsApp, por favor envía un mensaje de texto. Gracias."
                   });
 
                   const number = from.split(":").shift();
@@ -71,7 +71,7 @@ const wbotMonitor = async (
                   const hours = date.getHours();
                   const minutes = date.getMinutes();
 
-                  const body = `Chamada de voz/vídeo perdida às ${hours}:${minutes}`;
+                  const body = `Llamada de voz/video perdida a las ${hours}:${minutes}`;
                   const messageData = {
                     id: callId,
                     ticketId: ticket.id,

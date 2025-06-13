@@ -1251,7 +1251,7 @@ const verifyQueue = async (
       text: formatBody(`\u200e${greetingMessage}\n\n${options}`, contact),
     };
     let lastMsg = map_msg.get(contact.number)
-    let invalidOption = "Opção inválida, por favor, escolha uma opção válida."
+    let invalidOption = "Opción inválida, por favor elija una opción válida."
     
 
     // console.log('getBodyMessage(msg)', getBodyMessage(msg))
@@ -1341,7 +1341,7 @@ if (choosenQueue.options.length === 0) {
         });
 
         // Envia a mensagem de finalização
-        const finalizationMessage = "Seu ticket foi finalizado porque estamos *Offline* no momento.";
+        const finalizationMessage = "Tu ticket ha sido finalizado porque estamos *Offline* en este momento.";
         await wbot.sendMessage(
           `${contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`, {
           text: finalizationMessage,
@@ -1349,7 +1349,7 @@ if (choosenQueue.options.length === 0) {
       }
     } else if (ticket.status === "assigned") {
       // Prevent looping by checking if the ticket is assigned
-      console.log("Ticket is assigned, no need to send out-of-hours message.");
+      console.log("El ticket está asignado, no es necesario enviar un mensaje fuera de horario..");
       return; // Skip further processing if assigned
     }
   }
